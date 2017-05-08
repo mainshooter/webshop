@@ -1,0 +1,31 @@
+-=|=- Must have -=|=-
+
+1.) Producten toevoegen/wijzigen/verwijderen
+2.) IDeal
+3.) Winkelmandje
+4.) Product categorieën. Fabriekanten
+5.) Productverkoop pagina. Voor admin only.
+
+-=|=- Should have -=|=-
+
+1.) Zoeken
+2.) Zoekfilter
+3.) Paypal, credit card, visa
+4.) 
+5.) 
+
+-=|=- Could have -=|=-
+
+1.) Kortingscodes
+2.) Aanbiedingen
+3.) 
+4.) 
+5.) 
+
+-=|=- Would have -=|=-
+
+1.) 
+2.) 
+3.) 
+4.) 
+5.) 
