@@ -1,10 +1,15 @@
 -=|=- Must have -=|=-
 
-1.) Producten toevoegen/wijzigen/verwijderen
-2.) IDeal
-3.) Winkelmandje
-4.) Product categorieen. Fabriekanten
-5.) Productverkoop pagina. Voor admin only.
+1.) Producten toevoegen 
+2.) Producten wijzigen 
+3.) Producten verwijderen 
+4.) IDeal betaalmethode
+5.) Winkelmandje 
+6.) Product categorieen. Fabriekanten, platform VR(mobiel, laptop, overige)
+7.) Analyse pagina. Voor admin only.
+8.) Site layout
+9.) Foto's op de fontpage
+10.) Mail(s) over order
 
 -=|=- Should have -=|=-
 
@@ -18,11 +23,11 @@
 
 1.) Kortingscodes
 2.) Aanbiedingen
-3.) 
+3.) Voorraad van de producten
 4.) 
 5.) 
 
--=|=- Would have -=|=-
+-=|=- Won't have -=|=-
 
 1.) 
 2.) 
