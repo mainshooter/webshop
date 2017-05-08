@@ -3,7 +3,7 @@
 1.) Producten toevoegen/wijzigen/verwijderen
 2.) IDeal
 3.) Winkelmandje
-4.) Product categorieën. Fabriekanten
+4.) Product categorieen. Fabriekanten
 5.) Productverkoop pagina. Voor admin only.
 
 -=|=- Should have -=|=-
