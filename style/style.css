@@ -1,0 +1,81 @@
+#nav {
+    text-align: center;
+    padding: 0;
+}
+
+#nav ul ul {
+    display: none;
+}
+    #nav ul li:hover > ul {
+        display: block;
+    }
+#nav ul {
+    background: #fff;
+    font-size: 18px;
+    list-style: none;
+    display: inline-table;
+    text-align: center;
+    margin: 0 auto;
+}
+    #nav ul:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+    #nav ul li {
+        float: left;
+        transition: 0.3s;
+    }
+    #nav ul li:hover {
+        background: #ecf0f1;
+        cursor:pointer;
+    }
+        #nav ul li:hover a {
+            color: red;
+        }
+    #nav ul li a {
+      display: block;
+      padding: 1.4em 1em;
+      color: #4CB3F9;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+nav ul ul {
+    background: red;
+    padding: 0px;
+    position: absolute;
+    top: 100%;
+}
+    nav ul ul li {
+        float: none;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+        position: relative;
+        top: -1px;
+    }
+        #nav ul ul li a {
+            padding: 15px 40px;
+            color: white;
+        }
+            #nav ul ul li a:hover {
+                background: #D61515;
+                cursor:pointer;
+            }
+#nav ul ul ul {
+    position: absolute;
+    left: 100%;
+    top: 0;
+}
+.shopping_card {
+  width: 2em;
+  position: relative;
+  bottom: -15px;
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+
+}
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+  /* Tablet */
+
+}
