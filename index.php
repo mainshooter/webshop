@@ -25,13 +25,26 @@
           </div>
         </nav>
 
-        <content>
-          <div>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </div>
-        </content>
+        <div class="col-1">
+        </div>
 
-        <div class="footer">
+        <div class="col-3">
+          <!-- Catagories -->
+        </div>
+
+        <div class="col-2">
+          <!-- Product -->
+        </div>
+        <div class="col-2">
+          <!-- Product -->
+        </div>
+        <div class="col-2">
+          <!-- Product -->
+        </div>
+
+        <div class="col-1"></div>
+
+        <div class="footer col-12">
           testing
         </div>
       </div>
