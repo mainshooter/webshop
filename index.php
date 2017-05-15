@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>title</title>
+  <title>Multiversum - VR-brillen</title>
 
   <link rel="stylesheet" href="style/grid.css" type="text/css">
   <link rel="stylesheet" href="style/style.css" type="text/css">
@@ -25,24 +25,30 @@
           </div>
         </nav>
 
-        <div class="col-1">
-        </div>
+        <content>
+          <div class="col-1">
+            <!-- empty -->
+          </div>
 
-        <div class="col-3">
-          <!-- Catagories -->
-        </div>
+          <div class="col-3">
+            <!-- Catagories -->
+          </div>
 
-        <div class="col-2">
-          <!-- Product -->
-        </div>
-        <div class="col-2">
-          <!-- Product -->
-        </div>
-        <div class="col-2">
-          <!-- Product -->
-        </div>
+          <div class="col-2">
+            <!-- Product -->
+          </div>
 
-        <div class="col-1"></div>
+          <div class="col-2">
+            <!-- Product -->
+          </div>
+          <div class="col-2">
+            <!-- Product -->
+          </div>
+
+          <div class="col-1">
+            <!-- Empty -->
+          </div>
+        </content>
 
         <div class="footer col-12">
           testing
