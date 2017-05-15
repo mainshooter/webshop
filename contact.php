@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>Multiversum - VR-brillen</title>
+  <title>Multiversum - VR-Contacten</title>
 
   <link rel="stylesheet" href="style/grid.css" type="text/css">
   <link rel="stylesheet" href="style/style.css" type="text/css">
