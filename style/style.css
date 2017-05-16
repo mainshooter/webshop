@@ -7,13 +7,6 @@ body, html {
 }
 .image_header {
   padding: 0;
-  height: 19em;
-  overflow: hidden;
-}
-.image_header img {
-  padding: 0;
-  position: relative;
-  top: -10em;
 }
 
 #nav {

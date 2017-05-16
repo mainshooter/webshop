@@ -31,9 +31,7 @@
           </div>
         </nav>
 
-        <div class="col-12 image_header">
-          <img class="col-12" src="file/site/header.jpg"/>
-        </div>
+          <img class="col-12 image_header" src="http://placehold.it/1080x150"/>
 
         <content>
           <div class="col-2 categories">
