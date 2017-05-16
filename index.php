@@ -16,13 +16,16 @@
     <div class="wrapper">
       <div class="row">
         <nav>
-          <div id="nav" class="col-12">
+          <a href="">
+            <img class="col-1" src="file/site/logo.png">
+          </a>
+          <div id="nav" class="col-10">
               <ul id="width-ul">
                   <li><a href="">Home</a></li>
                   <li><a href="products.php">Producten</a></li>
                   <li><a href="contact.php">Contact</a></li>
               </ul>
-              <img class="shopping_card" src="file/site/shopping-card.png"/>
+              <img class="shopping_card col-1" src="file/site/shopping-card.png"/>
           </div>
         </nav>
 

@@ -49,12 +49,12 @@ body, html {
         cursor:pointer;
     }
         #nav ul li:hover a {
-            color: red;
+            color: #2ecc71;
         }
     #nav ul li a {
       display: block;
-      padding: 1.4em 1em;
-      color: #4CB3F9;
+      padding: 2.2em 1em;
+      color: #2c3e50;
       text-decoration: none;
       transition: 0.2s;
     }
@@ -125,6 +125,7 @@ nav ul ul {
 }
 .footer {
   font-size: 1.3em;
+  background-color: #2c3e50;
 }
 @media only screen and (min-width: 768px) {
     /* For desktop: */
