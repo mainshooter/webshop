@@ -53,25 +53,29 @@
             <div class="col-3 product">
               <!-- Product -->
               <img class="col-12" src="http://placehold.it/300x300" />
+              <button type="button">Bestel</button>
               <h2>Vr-bril</h2>
               <p>&euro;150,00</p>
             </div>
 
             <div class="col-3 product">
-              <!-- Products -->
+              <!-- Product -->
               <img class="col-12" src="http://placehold.it/300x300" />
+              <button type="button">Bestel</button>
               <h2>Vr-bril</h2>
               <p>&euro;150,00</p>
             </div>
             <div class="col-3 product">
               <!-- Product -->
               <img class="col-12" src="http://placehold.it/300x300" />
+              <button type="button">Bestel</button>
               <h2>Vr-bril</h2>
               <p>&euro;150,00</p>
             </div>
             <div class="col-3 product">
               <!-- Product -->
               <img class="col-12" src="http://placehold.it/300x300" />
+              <button type="button">Bestel</button>
               <h2>Vr-bril</h2>
               <p>&euro;150,00</p>
             </div>

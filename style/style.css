@@ -97,6 +97,15 @@ nav ul ul {
 .product h2 {
   font-weight: bold;
   font-size: 1.6em;
+  margin-top: -2em;
+}
+.product button {
+  position: relative;
+  top: -5.2em;
+  right: -4.8em;
+  height: 4em;
+  width: 6.1em;
+  font-size: 0.8em;
 }
 .product p {
   font-weight: lighter;
