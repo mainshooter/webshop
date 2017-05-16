@@ -26,8 +26,8 @@
           </div>
         </nav>
 
-        <div class="col-12" style="padding: 0;">
-          <img class="image_header col-12" src="http://placehold.it/1080x150"/>
+        <div class="col-12 image_header">
+          <img class="col-12" src="file/site/header.jpg"/>
         </div>
 
         <content>
