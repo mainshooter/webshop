@@ -26,7 +26,11 @@
         $conn = new PDO("mysql:host=$this->serverIP;dbname=$this->databaseName", $this->username, $this->password);
         // set the PDO error mode to exception
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
         $conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
+        // To fix limit issue with prepared statement
+
+
         $this->conn = $conn;
         return("Succes");
       }

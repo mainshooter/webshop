@@ -1,6 +1,7 @@
 <?php
   require 'webshop.class.php';
   require 'databasehandler.class.php';
+  require 'security.class.php';
 
   class product extends webshop {
     var $id;
@@ -20,12 +21,23 @@
     }
     public function details($id) {
       // This function gets the detailed page
+      $security = new security();
+      $page = $security->checkInput($id);
 
+      $db = new db();
+      $sql = "SELECT * FROM product WHERE idProduct=:productID";
+      $input = array(
+        "productID" => $security->checkInput($id)
+      );
+      return($db->readData($sql, $input));
     }
 
     public function display($page) {
       // This function gets all products for a page
       // And returns it
+      $security = new security();
+      $page = $security->checkInput($page);
+
       $db = new db();
       $sql = "SELECT * FROM product LIMIT :page, 4";
       $input = array(

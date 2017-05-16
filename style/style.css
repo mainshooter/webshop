@@ -117,6 +117,15 @@ nav ul ul {
   font-size: 1.2em;
   font-family: 'Quicksand', sans-serif;
 }
+.product_details h2 {
+  font-weight: bold;
+  font-size: 1.7em;
+}
+.product_details p {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: lighter;
+  font-size: 1.2em;
+}
 .footer {
   font-size: 1.3em;
   background-color: #2c3e50;
