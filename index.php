@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="style/grid.css" type="text/css">
   <link rel="stylesheet" href="style/style.css" type="text/css">
 
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:300" rel="stylesheet">
+
   <script src="js/main.js"></script>
 
   </head>
