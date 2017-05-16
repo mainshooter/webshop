@@ -21,10 +21,14 @@
                   <li><a href="">Home</a></li>
                   <li><a href="products.php">Producten</a></li>
                   <li><a href="contact.php">Contact</a></li>
-                  <li><img class="shopping_card" src="file/site/shopping-cart.png"/></li>
+                  <li><img class="shopping_card" src="file/site/shopping-card.png"/></li>
               </ul>
           </div>
         </nav>
+
+        <div class="col-12" style="padding: 0;">
+          <img class="image_header col-12" src="http://placehold.it/1080x50"/>
+        </div>
 
         <content>
           <div class="col-1">
@@ -33,17 +37,40 @@
 
           <div class="col-3">
             <!-- Catagories -->
+            <h3>Catagoriën</h3>
+            <ul>
+              <li>AR</li>
+              <li>VR</li>
+            </ul>
+            <h3>Merken</h3>
+            <ul>
+              <li>HTC</li>
+              <li>Oculus</li>
+            </ul>
           </div>
 
-          <div class="col-2">
-            <!-- Product -->
-          </div>
+          <div class="col-6">
 
-          <div class="col-2">
-            <!-- Product -->
-          </div>
-          <div class="col-2">
-            <!-- Product -->
+            <div class="col-4 product">
+              <!-- Product -->
+              <img class="col-12" src="file/site/shopping-card.png" />
+              <h2>Vr-bril</h2>
+              <p>&euro;150,00</p>
+            </div>
+
+            <div class="col-4 product">
+              <!-- Products -->
+              <img class="col-12" src="file/site/shopping-card.png" />
+              <h2>Vr-bril</h2>
+              <p>&euro;150,00</p>
+            </div>
+            <div class="col-4 product">
+              <!-- Product -->
+              <img class="col-12" src="file/site/shopping-card.png" />
+              <h2>Vr-bril</h2>
+              <p>&euro;150,00</p>
+            </div>
+
           </div>
 
           <div class="col-1">

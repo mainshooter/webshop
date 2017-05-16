@@ -1,3 +1,14 @@
+body, html {
+  padding: 0;
+  margin: 0;
+}
+.header {
+    width: 100%;
+}
+.image_header {
+  padding: 0;
+}
+
 #nav {
     text-align: center;
     padding: 0;
@@ -70,6 +81,9 @@ nav ul ul {
   width: 2em;
   position: relative;
   bottom: -15px;
+}
+.product {
+  text-align: center;
 }
 @media only screen and (min-width: 768px) {
     /* For desktop: */
