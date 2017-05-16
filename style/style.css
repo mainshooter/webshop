@@ -85,6 +85,14 @@ nav ul ul {
 .product {
   text-align: center;
 }
+.product h2 {
+  font-weight: bold;
+  font-size: 1.6em;
+}
+.product p {
+  font-weight: lighter;
+  font-size: 1.2em;
+}
 @media only screen and (min-width: 768px) {
     /* For desktop: */
 

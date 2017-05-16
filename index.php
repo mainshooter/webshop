@@ -27,7 +27,7 @@
         </nav>
 
         <div class="col-12" style="padding: 0;">
-          <img class="image_header col-12" src="http://placehold.it/1080x50"/>
+          <img class="image_header col-12" src="http://placehold.it/1080x150"/>
         </div>
 
         <content>
@@ -49,33 +49,35 @@
             </ul>
           </div>
 
-          <div class="col-6">
-
-            <div class="col-4 product">
+          <div class="col-8">
+            <div class="col-3 product">
               <!-- Product -->
-              <img class="col-12" src="file/site/shopping-card.png" />
+              <img class="col-12" src="http://placehold.it/300x300" />
               <h2>Vr-bril</h2>
               <p>&euro;150,00</p>
             </div>
 
-            <div class="col-4 product">
+            <div class="col-3 product">
               <!-- Products -->
-              <img class="col-12" src="file/site/shopping-card.png" />
+              <img class="col-12" src="http://placehold.it/300x300" />
               <h2>Vr-bril</h2>
               <p>&euro;150,00</p>
             </div>
-            <div class="col-4 product">
+            <div class="col-3 product">
               <!-- Product -->
-              <img class="col-12" src="file/site/shopping-card.png" />
+              <img class="col-12" src="http://placehold.it/300x300" />
+              <h2>Vr-bril</h2>
+              <p>&euro;150,00</p>
+            </div>
+            <div class="col-3 product">
+              <!-- Product -->
+              <img class="col-12" src="http://placehold.it/300x300" />
               <h2>Vr-bril</h2>
               <p>&euro;150,00</p>
             </div>
 
           </div>
 
-          <div class="col-1">
-            <!-- Empty -->
-          </div>
         </content>
 
         <div class="footer col-12">
