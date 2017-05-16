@@ -21,8 +21,8 @@
                   <li><a href="">Home</a></li>
                   <li><a href="products.php">Producten</a></li>
                   <li><a href="contact.php">Contact</a></li>
-                  <li><img class="shopping_card" src="file/site/shopping-card.png"/></li>
               </ul>
+              <img class="shopping_card" src="file/site/shopping-card.png"/>
           </div>
         </nav>
 

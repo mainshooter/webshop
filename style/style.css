@@ -86,8 +86,10 @@ nav ul ul {
 }
 .shopping_card {
   width: 2em;
-  position: relative;
-  bottom: -15px;
+  position: absolute;
+  top: 4px;
+  right: 7px;
+  transform: rotate(5deg);
 }
 .product {
   text-align: center;
