@@ -14,9 +14,10 @@
 
 
     var $conn;
-    var $databaseName;
-    var $username;
-    var $password;
+    var $serverIP = 'localhost';
+    var $databaseName = 'multiversum';
+    var $username = 'root';
+    var $password = '1234';
     // Properties for the database
 
     function __construct() {
@@ -25,6 +26,7 @@
         $conn = new PDO("mysql:host=$this->serverIP;dbname=$this->databaseName", $this->username, $this->password);
         // set the PDO error mode to exception
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
         $this->conn = $conn;
         return("Succes");
       }

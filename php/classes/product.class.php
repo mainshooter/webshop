@@ -1,0 +1,41 @@
+<?php
+  require 'webshop.class.php';
+  require 'databasehandler.class.php';
+
+  class product extends webshop {
+    var $id;
+    var $name;
+    var $discription;
+    var $price;
+    // Properties
+
+    public function add() {
+
+    }
+    public function remove() {
+
+    }
+    public function update() {
+
+    }
+    public function details($id) {
+      // This function gets the detailed page
+
+    }
+
+    public function display($page) {
+      // This function gets all products for a page
+      // And returns it
+      $db = new db();
+      $sql = "SELECT * FROM product LIMIT :page, 4";
+      $input = array(
+        "page" => $page
+      );
+      // First number is how mutch we want to show
+      // Seconds is where we start
+      return($db->readData($sql, $input));
+    }
+  }
+
+
+?>

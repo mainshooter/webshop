@@ -49,31 +49,16 @@
           </div>
 
           <div class="col-10">
-            <div class="col-3 col-m-4 product">
-              <!-- Product -->
-              <img class="col-12" src="http://placehold.it/300x300" />
-              <h2>Vr-bril</h2>
-              <p>&euro;150,00</p>
-            </div>
+            <?php
+              require 'php/classes/product.class.php';
+              require 'php/classes/view.class.php';
 
-            <div class="col-3 col-m-4 product">
-              <!-- Product -->
-              <img class="col-12" src="http://placehold.it/300x300" />
-              <h2>Vr-bril</h2>
-              <p>&euro;150,00</p>
-            </div>
-            <div class="col-3 col-m-4 product">
-              <!-- Product -->
-              <img class="col-12" src="http://placehold.it/300x300" />
-              <h2>Vr-bril</h2>
-              <p>&euro;150,00</p>
-            </div>
-            <div class="col-3 col-m-4 product">
-              <!-- Product -->
-              <img class="col-12" src="http://placehold.it/300x300" />
-              <h2>Vr-bril</h2>
-              <p>&euro;150,00</p>
-            </div>
+              $products = new product();
+              $productArray = $products->display('0');
+
+              $view = new view();
+              echo $view->displayProducts($productArray);
+            ?>
 
           </div>
 
