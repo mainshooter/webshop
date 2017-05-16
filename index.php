@@ -31,7 +31,7 @@
         </div>
 
         <content>
-          <div class="col-2">
+          <div class="col-2 categories">
             <!-- Catagories -->
             <h3>Catagoriën</h3>
             <ul>
@@ -77,7 +77,7 @@
         </content>
 
         <div class="footer col-12">
-          testing
+          &copy;Multiversum - webshop
         </div>
       </div>
     </div>
