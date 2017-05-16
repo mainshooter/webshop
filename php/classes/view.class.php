@@ -27,7 +27,8 @@
             <img class="col-3" src="http://placehold.it/300x300" />
             <div class="col-9">' . $key['beschrijving'] . '</div>
 
-            <p class="col-9">&euro;' . $key['prijs'] . '</p>
+            <p class="col-1">&euro;' . $key['prijs'] . '</p>
+            <i class="fa fa-cart-plus col-5" aria-hidden="true"></i>
           </div>
         ';
       }

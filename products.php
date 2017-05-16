@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="style/grid.css" type="text/css">
   <link rel="stylesheet" href="style/style.css" type="text/css">
 
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:300" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <script src="js/main.js"></script>
 
   </head>
@@ -51,13 +54,19 @@
               require 'php/classes/product.class.php';
               require 'php/classes/view.class.php';
 
+              $product = new product();
               if (ISSET($_REQUEST['details'])) {
                 // Want to display product details
-                $products = new product();
-                $productArray = $products->details($_REQUEST['details']);
+                $productArray = $product->details($_REQUEST['details']);
 
                 $view = new view();
                 echo $view->displayProductDetails($productArray);
+              }
+              else {
+                $productArray = $product->display('0');
+
+                $view = new view();
+                echo $view->displayProducts($productArray);
               }
               ?>
             </div>

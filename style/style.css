@@ -126,6 +126,9 @@ nav ul ul {
   font-weight: lighter;
   font-size: 1.2em;
 }
+.product_details i {
+  font-size: 1.4em;
+}
 .footer {
   font-size: 1.3em;
   background-color: #2c3e50;

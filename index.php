@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="style/style.css" type="text/css">
 
   <link href="https://fonts.googleapis.com/css?family=Quicksand:300" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <script src="js/main.js"></script>
 
