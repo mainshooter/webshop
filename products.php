@@ -47,10 +47,12 @@
             <div class="col-10">
 
               <?php
+              // Display product details
               require 'php/classes/product.class.php';
               require 'php/classes/view.class.php';
 
               if (ISSET($_REQUEST['details'])) {
+                // Want to display product details
                 $products = new product();
                 $productArray = $products->details($_REQUEST['details']);
 
@@ -58,6 +60,7 @@
                 echo $view->displayProductDetails($productArray);
               }
               ?>
+            </div>
 
           </content>
 

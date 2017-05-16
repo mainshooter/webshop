@@ -23,10 +23,11 @@
       foreach ($result as $key) {
         $detail .= '
           <div class="col-10 product_details">
-            <h2>' . $key['naam'] . '</h2>
-            <div class="col-12">' . $key['beschrijving'] . '</div>
+            <h2 class="col-12">' . $key['naam'] . '</h2>
+            <img class="col-3" src="http://placehold.it/300x300" />
+            <div class="col-9">' . $key['beschrijving'] . '</div>
 
-            <p>&euro;' . $key['prijs'] . '</p>
+            <p class="col-9">&euro;' . $key['prijs'] . '</p>
           </div>
         ';
       }
