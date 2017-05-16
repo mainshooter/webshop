@@ -85,7 +85,7 @@ nav ul ul {
     top: 0;
 }
 .shopping_card {
-  width: 2em;
+  width: 4em;
   position: absolute;
   top: 4px;
   right: 7px;
@@ -97,7 +97,6 @@ nav ul ul {
 .product h2 {
   font-weight: bold;
   font-size: 1.6em;
-  margin-top: -2em;
 }
 .product button {
   position: relative;

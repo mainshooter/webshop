@@ -31,11 +31,7 @@
         </div>
 
         <content>
-          <div class="col-1">
-            <!-- empty -->
-          </div>
-
-          <div class="col-3">
+          <div class="col-2">
             <!-- Catagories -->
             <h3>Catagoriën</h3>
             <ul>
@@ -49,33 +45,29 @@
             </ul>
           </div>
 
-          <div class="col-8">
-            <div class="col-3 product">
+          <div class="col-10">
+            <div class="col-3 col-m-4 product">
               <!-- Product -->
               <img class="col-12" src="http://placehold.it/300x300" />
-              <button type="button">Bestel</button>
               <h2>Vr-bril</h2>
               <p>&euro;150,00</p>
             </div>
 
-            <div class="col-3 product">
+            <div class="col-3 col-m-4 product">
               <!-- Product -->
               <img class="col-12" src="http://placehold.it/300x300" />
-              <button type="button">Bestel</button>
               <h2>Vr-bril</h2>
               <p>&euro;150,00</p>
             </div>
-            <div class="col-3 product">
+            <div class="col-3 col-m-4 product">
               <!-- Product -->
               <img class="col-12" src="http://placehold.it/300x300" />
-              <button type="button">Bestel</button>
               <h2>Vr-bril</h2>
               <p>&euro;150,00</p>
             </div>
-            <div class="col-3 product">
+            <div class="col-3 col-m-4 product">
               <!-- Product -->
               <img class="col-12" src="http://placehold.it/300x300" />
-              <button type="button">Bestel</button>
               <h2>Vr-bril</h2>
               <p>&euro;150,00</p>
             </div>
