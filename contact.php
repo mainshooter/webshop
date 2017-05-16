@@ -16,15 +16,20 @@
     <div class="wrapper">
       <div class="row">
         <nav>
-          <div id="nav" class="col-12">
+          <a href="index.php">
+            <img class="col-1" src="file/site/logo.png">
+          </a>
+          <div id="nav" class="col-10">
               <ul id="width-ul">
-                  <li><a href="">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                   <li><a href="products.php">Producten</a></li>
                   <li><a href="contact.php">Contact</a></li>
-                  <li><img class="shopping_card" src="file/site/shopping-cart.png"/></li>
               </ul>
           </div>
+          <img class="col-1" src="file/site/shopping-card.png"/>
         </nav>
+
+          <img class="col-12 image_header" src="http://placehold.it/1080x150"/>
 
         <content>
           <div class="col-1">
@@ -52,7 +57,7 @@
         </content>
 
         <div class="footer col-12">
-          testing
+          &copy;Multiversum - webshop
         </div>
       </div>
     </div>

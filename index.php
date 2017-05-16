@@ -18,17 +18,17 @@
     <div class="wrapper">
       <div class="row">
         <nav>
-          <a href="">
+          <a href="index.php">
             <img class="col-1" src="file/site/logo.png">
           </a>
           <div id="nav" class="col-10">
               <ul id="width-ul">
-                  <li><a href="">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                   <li><a href="products.php">Producten</a></li>
                   <li><a href="contact.php">Contact</a></li>
               </ul>
-              <img class="shopping_card col-1" src="file/site/shopping-card.png"/>
           </div>
+          <img class="col-1" src="file/site/shopping-card.png"/>
         </nav>
 
           <img class="col-12 image_header" src="http://placehold.it/1080x150"/>
@@ -36,7 +36,7 @@
         <content>
           <div class="col-2 categories">
             <!-- Catagories -->
-            <h3>Catagoriën</h3>
+            <h3>categorieën</h3>
             <ul>
               <li>AR</li>
               <li>VR</li>
