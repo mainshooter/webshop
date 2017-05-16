@@ -19,19 +19,7 @@
   <body>
     <div class="wrapper">
       <div class="row">
-        <nav>
-          <a href="index.php">
-            <img class="col-1" src="file/site/logo.png">
-          </a>
-          <div id="nav" class="col-10">
-              <ul id="width-ul">
-                <li><a href="index.php">Home</a></li>
-                  <li><a href="products.php">Producten</a></li>
-                  <li><a href="contact.php">Contact</a></li>
-              </ul>
-          </div>
-          <img class="col-1" src="file/site/shopping-card.png"/>
-        </nav>
+        <?php require("assets/header.php"); ?>
 
           <img class="col-12 image_header" src="http://placehold.it/1080x150"/>
 
@@ -60,9 +48,7 @@
           </div>
         </content>
 
-        <div class="footer col-12">
-          &copy;Multiversum - webshop
-        </div>
+        <?php require("assets/footer.php"); ?>
       </div>
     </div>
 
