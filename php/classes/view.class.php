@@ -24,7 +24,7 @@
         $detail .= '
           <div class="col-10 product_details">
             <h2 class="col-12">' . $key['naam'] . '</h2>
-            <img class="col-3" src="http://placehold.it/300x300" />
+            <img class="col-3" src="' . $key['pad'] . $key['filenaam'] . '" />
             <div class="col-9">' . $key['beschrijving'] . '</div>
 
             <p class="col-1">&euro;' . $key['prijs'] . '</p>
