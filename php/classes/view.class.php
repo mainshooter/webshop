@@ -8,7 +8,7 @@
         $products .= '
         <div class="col-3 col-m-4 product">
           <a href="products.php?details=' . $key['idProduct'] . '">
-            <img class="col-12" src="http://placehold.it/300x300" />
+            <img class="col-12" src="' . $key['pad'] . $key['filenaam'] . '" />
             <h2>' . $key['naam'] . '</h2>
           </a>
           <p>&euro;' . $key['prijs'] . '</p>
