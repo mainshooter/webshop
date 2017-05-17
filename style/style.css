@@ -78,11 +78,12 @@ nav ul ul {
     top: 0;
 }
 .shopping_card {
-  width: 4em;
-  position: absolute;
-  top: 4px;
-  right: 7px;
-  transform: rotate(5deg);
+  padding: 0;
+  height: 100%;
+  text-align: center;
+  margin: auto 0;
+  margin-top: 1em;
+  font-size: 2em !important;
 }
 .categories {
   font-size: 1.3em;
@@ -116,7 +117,7 @@ nav ul ul {
   font-weight: lighter;
   font-size: 1.2em;
   font-family: 'Quicksand', sans-serif;
-  margin-top: 0.3em; 
+  margin-top: 0.3em;
 }
 .product_details h2 {
   font-weight: bold;
