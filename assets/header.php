@@ -9,5 +9,5 @@
                 <li><a href="contact.php">Contact</a></li>
             </ul>
         </div>
-        <img class="col-1" src="file/site/shopping-card.png"/>
+        <i class="fa fa-shopping-basket col-1" aria-hidden="true"></i>
     </nav>
