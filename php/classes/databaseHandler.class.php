@@ -11,6 +11,7 @@
     // );
     // $db->readData($sql, $input);
     // This is called prepared statements
+    
 
 
     var $conn;
