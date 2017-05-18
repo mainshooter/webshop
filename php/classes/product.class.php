@@ -10,19 +10,49 @@
     var $price;
     // Properties
 
-    public function add() {
-
+    public function add($newProductArray) {
+      // Add a product to database
+      // Parameter is send as a array
+      $db = new db();
+      $sql = "INSERT INTO Product (`Fabrikant_idFabrikant`, `naam`, `prijs`, `beschrijving`, `Categorie_idCategorie`) VALUES (:Fabrikant_idFabrikant, :naam, :prijs, :beschrijving, :Categorie_idCategorie)";
+      $input = array(
+        "Fabrikant_idFabrikant" => $s->checkInput($newProductArray['fabrikantID']),
+        "naam" => $s->checkInput($newProductArray['naam']),
+        "prijs" => $s->checkInput($newProductArray['prijs']),
+        "beschrijving" => $s->checkInput($newProductArray['beschrijving']),
+        "Categorie_idCategorie" => $s->checkInput($newProductArray['catagorieID'])
+      );
+      return($db->CreateData($sql, $input));
     }
-    public function remove() {
-
+    public function remove($productID) {
+      // Removes product
+      $s = new security();
+      $db = new db();
+      $sql = "DELETE FROM `Product` WHERE idProduct=:productID";
+      $input = array(
+        "productID" => $s->checkInput($productID)
+      );
+      return($db->DeleteData();)
     }
-    public function update() {
-
+    public function update($updateProductArray) {
+      // Update product
+      $s = new security();
+      $db = new db();
+      $sql = "UPDATE `Product` SET `Fabrikant_idFabrikant`=:fabrikantID,`naam`=:naam,`prijs`=:prijs,`beschrijving`=:beschrijving,`Categorie_idCategorie`=:catagorieID WHERE idProduct=:productID";
+      $input = array(
+        "fabrikantID" => $s->checkInput($updateProductArray['fabrikantID']),
+        "naam" => $s->checkInput($updateProductArray['naam']),
+        "prijs" => $s->checkInput($updateProductArray['prijs']),
+        "beschrijving" => $s->checkInput($updateProductArray['beschrijving']),
+        "catagorieID" => $s->checkInput($updateProductArray['catagorieID']),
+        "productID" => $s->checkInput($updateProductArray['productID'])
+      );
+      return($db->UpdateData($sql, $input));
     }
     public function details($id) {
       // This function gets the detailed page
-      $security = new security();
-      $page = $security->checkInput($id);
+      $s = new security();
+      $page = $s->checkInput($id);
 
       $db = new db();
       $sql = "SELECT * FROM `Product` JOIN files_has_Product on files_has_Product.Product_idProduct=`idProduct` JOIN files on files_has_Product.files_idfiles=files_has_Product.idfiles_has_Product WHERE idProduct=:productID";
@@ -35,13 +65,13 @@
     public function display($page) {
       // This function gets all products for a page
       // And returns it
-      $security = new security();
+      $s = new security();
       $page = $security->checkInput($page);
 
       $db = new db();
       $sql = "SELECT * FROM `Product` JOIN files_has_Product on files_has_Product.Product_idProduct=`idProduct` JOIN files on files_has_Product.files_idfiles=files_has_Product.idfiles_has_Product LIMIT :page, 4";
       $input = array(
-        "page" => $page
+        "page" => $s->checkInput($page)
       );
       // First number is how mutch we want to show
       // Seconds is where we start
