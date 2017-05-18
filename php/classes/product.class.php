@@ -61,6 +61,14 @@
       );
       return($db->readData($sql, $input));
     }
+    public function productIDs() {
+      // Get all ID's from all products and returns it
+      $db = new db();
+      $sql = "SELECT idProduct FROM Product";
+      $input = array();
+
+      return($db->readData($sql, $input));
+    }
 
     public function display($page) {
       // This function gets all products for a page
