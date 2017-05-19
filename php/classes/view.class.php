@@ -45,8 +45,7 @@
           <h2 class="col-12 left-text">' . $key['naam'] . '</h2>
           <img class="col-2" src="' . $key['pad'] . $key['filenaam'] . '">
           <p class="col-3 left-text winkelmandje-height-center">' . $key['prijs'] . '</p>';
-
-            $this->generateOptionNumber($key['idProduct'], $amount);
+          $view .= $this->generateOptionNumbers($key['idProduct'], $amount);
 
           $view .= '<i class="fa fa-trash-o col-3 winkelmandje-height-center" aria-hidden="true" onclick="shoppingcard.remove(' . $key['idProduct'] . ')"></i>
         </div>
@@ -61,8 +60,8 @@
       // We set that as selected
       $selectField = '<select onchange="shoppingcard.update(' . $productID . ', this.value);" class="col-2 winkelmandje-height-center">';
       for ($i=0; $i < 10; $i++) {
-        if ($amount === $i) {
-          $selectField .= '<option value="' . $i .' selected>' . $i . '"</option>';
+        if ($amount == $i) {
+          $selectField .= '<option value="' . $i .'" selected>' . $i . '</option>';
         }
         else {
           $selectField .= '<option value="' . $i .'">' . $i . '</option>';
