@@ -58,7 +58,7 @@
       $page = $s->checkInput($id);
 
       $db = new db();
-      $sql = "SELECT * FROM `Product` JOIN files_has_Product on files_has_Product.Product_idProduct=`idProduct` JOIN files on files_has_Product.files_idfiles=files_has_Product.idfiles_has_Product WHERE idProduct=:productID";
+      $sql = "SELECT * FROM `Product` JOIN files_has_Product on files_has_Product.Product_idProduct=`idProduct` JOIN files ON files_has_Product.files_idfiles=files.idfiles WHERE idProduct=:productID";
       $input = array(
         "productID" => $s->checkInput($id)
       );
@@ -81,7 +81,7 @@
       $page = $s->checkInput($page);
 
       $db = new db();
-      $sql = "SELECT * FROM `Product` JOIN files_has_Product on files_has_Product.Product_idProduct=`idProduct` JOIN files on files_has_Product.files_idfiles=files_has_Product.idfiles_has_Product LIMIT :page, 4";
+      $sql = "SELECT * FROM `Product` JOIN files_has_Product on files_has_Product.Product_idProduct=`idProduct` JOIN files ON files_has_Product.files_idfiles=files.idfiles LIMIT :page, 4";
       $input = array(
         "page" => $s->checkInput($page)
       );
