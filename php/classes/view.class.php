@@ -46,7 +46,7 @@
           <img class="col-2" src="' . $key['pad'] . $key['filenaam'] . '">
           <p class="col-3 left-text winkelmandje-height-center">' . $key['prijs'] . '</p>';
 
-            $this->generateOptionNumber($amount);
+            $this->generateOptionNumber($key['idProduct'], $amount);
 
           $view .= '<i class="fa fa-trash-o col-3 winkelmandje-height-center" aria-hidden="true" onclick="shoppingcard.remove(' . $key['idProduct'] . ')"></i>
         </div>
@@ -55,11 +55,11 @@
       return($view);
     }
 
-    public function generateOptionNumbers($amount) {
+    public function generateOptionNumbers($productID, $amount) {
       // Generates a select input field.
       // When the option is the same to the number we got for the option input
       // We set that as selected
-      $selectField = '<select class="col-2 winkelmandje-height-center">';
+      $selectField = '<select onchange="shoppingcard.update(' . $productID . ', this.value);" class="col-2 winkelmandje-height-center">';
       for ($i=0; $i < 10; $i++) {
         if ($amount === $i) {
           $selectField .= '<option value="' . $i .' selected>' . $i . '"</option>';
