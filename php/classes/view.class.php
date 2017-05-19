@@ -1,6 +1,6 @@
 <?php
 
-  class view {
+  class View {
     public function displayProducts($result) {
       // This function creates the view for all products and returns it
       $products = '';
@@ -12,11 +12,13 @@
             <h2>' . $key['naam'] . '</h2>
           </a>
           <p>&euro;' . $key['prijs'] . '</p>
+          <i class="fa fa-cart-arrow-down" aria-hidden="true" onclick="shoppingcard.add(' . $key['idProduct'] . ');"></i>
         </div>
         ';
       }
       return($products);
     }
+
     public function displayProductDetails($result) {
       // DIsplay product details
       $detail = '';
@@ -34,6 +36,11 @@
       }
       return($detail);
     }
+    
+    public function displayShoppingCard($result) {
+      var_dump($result);
+    }
+
   }
 
 

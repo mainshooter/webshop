@@ -15,20 +15,20 @@
           // Details of a product
           $productArray = $product->details($_REQUEST['details']);
 
-          $view = new view();
+          $view = new View();
           echo $view->displayProductDetails($productArray);
           break;
         case 'page':
           // Display a certent page
           $productArray = $product->display($_REQUEST['pageNumber']);
 
-          $view = new view();
+          $view = new View();
           echo $view->displayProducts($productArray);
         default:
             // Displays the first page by default
             $productArray = $product->display('0');
 
-            $view = new view();
+            $view = new View();
             echo $view->displayProducts($productArray);
           break;
       }

@@ -1,7 +1,8 @@
 <?php
-
+  session_start();
   if (ISSET($_REQUEST['shoppingcard'])) {
     require '../classes/shoppingcard.class.php';
+    require '../classes/view.class.php';
     // require '../classes/webshop.class.php';
     $shoppingcard = new shoppingcard();
 
@@ -17,6 +18,12 @@
       case 'update':
         // Updates the amount of a product
         $shoppingcard->update($_REQUEST['productID'], $_REQUEST['amount']);
+        break;
+      case 'show':
+        $card = $shoppingcard->get();
+
+        $view = new View();
+        $view->displayShoppingCard($card);
         break;
     }
   }

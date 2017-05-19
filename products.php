@@ -42,18 +42,22 @@
               require 'php/classes/product.class.php';
               require 'php/classes/view.class.php';
 
-              $product = new product();
+              $product = new Product();
               if (ISSET($_REQUEST['details'])) {
                 // Want to display product details
                 $productArray = $product->details($_REQUEST['details']);
 
-                $view = new view();
+                $view = new View();
                 echo $view->displayProductDetails($productArray);
+              }
+              else if (ISSET($_REQUEST['categories'])) {
+                $productArray = $product->categories();
+                // to get the product catagories only
               }
               else {
                 $productArray = $product->display('0');
 
-                $view = new view();
+                $view = new View();
                 echo $view->displayProducts($productArray);
               }
               ?>
