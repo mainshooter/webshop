@@ -103,6 +103,7 @@ nav ul ul {
 }
 .product {
   text-align: center;
+  border: groove;
 }
 .product h2 {
   font-weight: bold;

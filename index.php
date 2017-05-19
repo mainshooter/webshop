@@ -21,21 +21,7 @@
           <img class="col-12 image_header" src="http://placehold.it/1080x150"/>
 
         <content>
-          <div class="col-2 categories">
-            <!-- Catagories -->
-            <h3>categorieën</h3>
-            <ul>
-              <li>AR</li>
-              <li>VR</li>
-            </ul>
-            <h3>Merken</h3>
-            <ul>
-              <li>HTC</li>
-              <li>Oculus</li>
-            </ul>
-          </div>
-
-          <div class="col-10">
+          <div class="col-12">
             <?php
               require 'php/classes/product.class.php';
               require 'php/classes/view.class.php';
@@ -56,3 +42,17 @@
     <script src="js/main.js"></script>
   </body>
 </html>
+
+<!--<div class="col-3 categories">
+            <!-- Catagories -->
+            <!--<h3>Categorieën</h3>
+            <ul>
+              <li>AR</li>
+              <li>VR</li>
+            </ul>
+            <h3>Merken</h3>
+            <ul>
+              <li>HTC</li>
+              <li>Oculus</li>
+            </ul>
+          </div>-->
