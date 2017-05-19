@@ -5,6 +5,11 @@ body, html {
 .header {
     width: 100%;
 }
+.title {
+    font-family: 'Quicksand', sans-serif;
+    text-align: left;
+    font-size: 5vh;
+}
 .image_header {
   padding: 0;
 }
@@ -13,7 +18,7 @@ body, html {
 }
 
 #nav {
-    text-align: center;
+    text-align: right;
     padding: 0;
 }
 

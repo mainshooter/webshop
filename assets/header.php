@@ -5,9 +5,10 @@
  ?>
 <nav>
     <a href="index.php">
-        <img class="col-1" src="file/site/logo.png">
+        <img class="col-1" src="file/site/logo_nt.png">
     </a>
-        <div id="nav" class="col-10">
+    <div class="col-2 title">Multiversum</div>
+        <div id="nav" class="col-8">
             <ul id="width-ul">
                 <li><a href="index.php">Home</a></li>
                 <li><a href="products.php">Producten</a></li>
