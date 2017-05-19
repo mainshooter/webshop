@@ -55,11 +55,11 @@
           // Total cost of one product with multiple items
 
           echo $view->displayShoppingCard($product_details, $amount, $productTotal);
+          }
           // Display
         break;
     }
   }
-}
 
 
 ?>
