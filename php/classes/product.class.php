@@ -90,6 +90,23 @@
       return($db->readData($sql, $input));
     }
 
+    public function productPrice($productID) {
+      // Gets the price of one product
+      // And returns it as a number or string
+      $db = new db();
+      $s = new Security();
+
+      $sql = "SELECT prijs FROM Product WHERE idProduct=:productID LIMIT 1";
+      $input = array(
+        "productID" => $s->checkInput($productID)
+      );
+      $result = $db->readData($sql, $input);
+
+      foreach ($result as $row) {
+        return($row['prijs']);
+      }
+    }
+
     public function getCatagories() {
       // This function get all the catagories and returns it as a array
       $db = new db();

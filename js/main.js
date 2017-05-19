@@ -21,11 +21,15 @@ var shoppingcard;
     // Update the amount of one product in the shoppingcard
     shoppingcard.ajax("php/ctrl/shoppingcard.ctrl.php?shoppingcard=update&productID=" + productID + "&amount=" + amount + "");
     shoppingcard.display();
+    shoppingcard.count();
   },
   display: function() {
     // Displays the shoppingcard after a update
     var result = shoppingcard.ajax("php/ctrl/shoppingcard.ctrl.php?shoppingcard=display");
     document.getElementById('content').innerHTML = result;
+  },
+  goTo: function() {
+    window.location.replace('winkelmandje.php');
   },
   ajax: function(url) {
     // AJAX SYNC GET REQUEST

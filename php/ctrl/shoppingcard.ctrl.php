@@ -30,17 +30,11 @@
         // Updates the amount of a product
         $shoppingcard->update($_REQUEST['productID'], $_REQUEST['amount']);
         break;
-      case 'show':
-        $card = $shoppingcard->get();
-
-        $view = new View();
-        $view->displayShoppingCard($card);
-        break;
       case 'count':
         // Counts all products in the shoppingcard
         echo $shoppingcard->count();
         break;
-      case 'show':
+      case 'display':
         // Displays the content from the shoppingcard
         $view = new View();
         $shoppingcard = new Shoppingcard();
@@ -57,7 +51,10 @@
           $amount = $shoppingcardArray[$key['productID']]['amount'];
           // Get how mutch we have of one product
 
-          echo $view->displayShoppingCard($product_details, $amount);
+          $productTotal = $shoppingcard->productTotalPriceInShoppingCard($key['productID']);
+          // Total cost of one product with multiple items
+
+          echo $view->displayShoppingCard($product_details, $amount, $productTotal);
           // Display
         break;
     }

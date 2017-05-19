@@ -12,7 +12,7 @@
             <h2>' . $key['naam'] . '</h2>
           </a>
           <p>&euro;' . $key['prijs'] . '</p>
-          <i class="fa fa-cart-arrow-down" aria-hidden="true" onclick="shoppingcard.add(' . $key['idProduct'] . ');"></i>
+          <i class="fa fa-cart-arrow-down" aria-hidden="true" onclick="shoppingcard.add(' . $key['idProduct'] . ');shoppingcard.goTo();"></i>
         </div>
         ';
       }
@@ -37,7 +37,7 @@
       return($detail);
     }
 
-    public function displayShoppingCard($result, $amount) {
+    public function displayShoppingCard($result, $amount, $productTotal) {
       $view = '';
       foreach ($result as $key) {
         $view .= '
@@ -47,7 +47,8 @@
           <p class="col-3 left-text winkelmandje-height-center">&euro;' . $key['prijs'] . '</p>';
           $view .= $this->generateOptionNumbers($key['idProduct'], $amount);
 
-          $view .= '<i class="fa fa-trash-o col-3 winkelmandje-height-center" aria-hidden="true" onclick="shoppingcard.remove(' . $key['idProduct'] . ')"></i>
+          $view .= '<p>Totaal: &euro;' . $productTotal . '</p>
+          <i class="fa fa-trash-o col-1 winkelmandje-height-center" aria-hidden="true" onclick="shoppingcard.remove(' . $key['idProduct'] . ')"></i>
         </div>
         ';
       }
@@ -58,7 +59,7 @@
       // Generates a select input field.
       // When the option is the same to the number we got for the option input
       // We set that as selected
-      $selectField = '<select onchange="shoppingcard.update(' . $productID . ', this.value);" class="col-2 winkelmandje-height-center">';
+      $selectField = '<select onchange="shoppingcard.update(\'' . $productID . '\', this.value);" class="col-2 winkelmandje-height-center">';
       for ($i=0; $i < 10; $i++) {
         if ($amount == $i) {
           $selectField .= '<option value="' . $i .'" selected>' . $i . '</option>';

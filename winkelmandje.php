@@ -28,7 +28,7 @@
             require_once 'php/classes/product.class.php';
             require_once 'php/classes/view.class.php';
 
-            $view = new view();
+            $view = new View();
             $shoppingcard = new Shoppingcard();
             $product = new product();
 
@@ -41,10 +41,12 @@
               // Get the details of a product
 
               $amount = $shoppingcardArray[$key['productID']]['amount'];
-              // Get how mutch we have
+              // Get how mutch we have of one product
 
-              echo $view->displayShoppingCard($product_details, $amount);
-              // Display
+              $productTotal = $shoppingcard->productTotalPriceInShoppingCard($key['productID']);
+              // Total cost of one product with multiple items
+
+              echo $view->displayShoppingCard($product_details, $amount, $productTotal);
             }
 
           ?>
