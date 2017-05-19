@@ -14,6 +14,8 @@ var shoppingcard;
   },
   remove: function(productID) {
     // Removes a item from the shoppingcard
+    shoppingcard.ajax("php/ctrl/shoppingcard.ctrl.php?shoppingcard=delete&productID=" + productID + "");
+    shoppingcard.display();
   },
   update: function(productID, amount) {
     // Update the amount of one product in the shoppingcard
