@@ -43,7 +43,10 @@
               $amount = $shoppingcardArray[$key['productID']]['amount'];
               // Get how mutch we have of one product
 
+              echo "<div class='col-12'>" . $key['amount'] . "</div>";
+              echo "<div class='col-12'>" . $key['productID'] . "</div>";
               $productTotal = $shoppingcard->productTotalPriceInShoppingCard($key['productID']);
+              echo "<div class='col-12'>" . $productTotal . "</div>";
               // Total cost of one product with multiple items
 
               echo $view->displayShoppingCard($product_details, $amount, $productTotal);

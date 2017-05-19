@@ -61,12 +61,16 @@ require_once 'security.class.php';
 
     public function productTotalPriceInShoppingCard($productID) {
       $card = $this->get();
+      var_dump($card);
       $product = new product();
       $productPrice = $product->productPrice($productID);
 
       $total = 0;
-      foreach ($card as $row) {
-        $total = $total + ($row['amount'] * $productPrice);
+      foreach ($card as $key) {
+        if ($key['productID'] == $productID) {
+          // Only calculate a total product price when it is eacual to the productID
+            $total = $total + (intval($key['amount']) * $productPrice);
+        }
       }
       return($total);
     }

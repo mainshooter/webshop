@@ -103,7 +103,7 @@
       $result = $db->readData($sql, $input);
 
       foreach ($result as $row) {
-        return($row['prijs']);
+        return(intval($row['prijs']));
       }
     }
 
