@@ -14,7 +14,7 @@
   // PHP_EOL
   // Used for a enter its like <br />
 
-  class fileHandler {
+  class filehandler {
 
     var $file;
     var $fileName;

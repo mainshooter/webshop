@@ -32,7 +32,7 @@
       $input = array(
         "productID" => $s->checkInput($productID)
       );
-      return($db->DeleteData();)
+      return($db->DeleteData());
     }
     public function update($updateProductArray) {
       // Update product
@@ -57,7 +57,7 @@
       $db = new db();
       $sql = "SELECT * FROM `Product` JOIN files_has_Product on files_has_Product.Product_idProduct=`idProduct` JOIN files on files_has_Product.files_idfiles=files_has_Product.idfiles_has_Product WHERE idProduct=:productID";
       $input = array(
-        "productID" => $security->checkInput($id)
+        "productID" => $s->checkInput($id)
       );
       return($db->readData($sql, $input));
     }
@@ -74,7 +74,7 @@
       // This function gets all products for a page
       // And returns it
       $s = new security();
-      $page = $security->checkInput($page);
+      $page = $s->checkInput($page);
 
       $db = new db();
       $sql = "SELECT * FROM `Product` JOIN files_has_Product on files_has_Product.Product_idProduct=`idProduct` JOIN files on files_has_Product.files_idfiles=files_has_Product.idfiles_has_Product LIMIT :page, 4";
