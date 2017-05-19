@@ -9,7 +9,17 @@
     switch ($_REQUEST['shoppingcard']) {
       case 'add':
         // Add product from shoppingcard
-        $shoppingcard->add($_REQUEST['productID'], $_REQUEST['amount']);
+        if ($shoppingcard->checkIfIdExists($_REQUEST['productID']) == false) {
+          // It isn't existsing in the shoppingcard
+          $shoppingcard->add($_REQUEST['productID'], $_REQUEST['amount']);
+        }
+        else if ($shoppingcard->checkIfIdExists($_REQUEST['productID']) == true) {
+          // Exists in the shoppingcard
+          $amount = $shoppingcard->getProductAmount($_REQUEST['productID']);
+          $amount = $amount + 1;
+          echo " " . $amount;
+          $shoppingcard->update($_REQUEST['productID'], $amount);
+        }
         break;
       case 'delete':
         // Remove product form shoppingcard
@@ -24,6 +34,10 @@
 
         $view = new View();
         $view->displayShoppingCard($card);
+        break;
+      case 'count':
+        // Counts all products in the shoppingcard
+        echo $shoppingcard->count();
         break;
     }
   }
