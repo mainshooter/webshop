@@ -44,20 +44,32 @@
         <div class="col-12 product">
           <h2 class="col-12 left-text">' . $key['naam'] . '</h2>
           <img class="col-2" src="' . $key['pad'] . $key['filenaam'] . '">
-          <p class="col-3 left-text winkelmandje-height-center">' . $key['prijs'] . '</p>
-          <div>' . $amount . '</div>
-          <select class="col-2 winkelmandje-height-center">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
-          <i class="fa fa-trash-o col-3 winkelmandje-height-center" aria-hidden="true" onclick="shoppingcard.remove(' . $key['idProduct'] . ')"></i>
+          <p class="col-3 left-text winkelmandje-height-center">' . $key['prijs'] . '</p>';
+
+            $this->generateOptionNumber($amount);
+
+          $view .= '<i class="fa fa-trash-o col-3 winkelmandje-height-center" aria-hidden="true" onclick="shoppingcard.remove(' . $key['idProduct'] . ')"></i>
         </div>
         ';
       }
       return($view);
+    }
+
+    public function generateOptionNumbers($amount) {
+      // Generates a select input field.
+      // When the option is the same to the number we got for the option input
+      // We set that as selected
+      $selectField = '<select class="col-2 winkelmandje-height-center">';
+      for ($i=0; $i < 10; $i++) {
+        if ($amount === $i) {
+          $selectField .= '<option value="' . $i .' selected>' . $i . '"</option>';
+        }
+        else {
+          $selectField .= '<option value="' . $i .'">' . $i . '</option>';
+        }
+      }
+      $selectField .= '</select>';
+      return($selectField);
     }
 
   }
