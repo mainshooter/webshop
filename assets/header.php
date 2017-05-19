@@ -10,6 +10,8 @@
                 <li><a href="contact.php">Contact</a></li>
             </ul>
         </div>
-        <i class="fa fa-shopping-basket col-1 shopping_card" aria-hidden="true"></i>
+        <a href="winkelmandje.php">
+          <i class="fa fa-shopping-basket col-1 shopping_card" aria-hidden="true"></i>
+        </a>
         <span id="shoppingcardCount">0</span>
     </nav>
