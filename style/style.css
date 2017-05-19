@@ -8,6 +8,9 @@ body, html {
 .image_header {
   padding: 0;
 }
+.left-text {
+  text-align: left;
+}
 
 #nav {
     text-align: center;
@@ -130,6 +133,11 @@ nav ul ul {
 }
 .product_details i {
   font-size: 1.4em;
+}
+.winkelmandje-height-center {
+  margin: 2.5em 0;
+  height: 100%;
+  display: block;
 }
 .footer {
   font-size: 1.3em;
