@@ -24,7 +24,7 @@
       );
       return($db->CreateData($sql, $input));
     }
-    
+
     public function remove($productID) {
       // Removes product
       $s = new Security();
@@ -88,6 +88,19 @@
       // First number is how mutch we want to show
       // Seconds is where we start
       return($db->readData($sql, $input));
+    }
+
+    public function getCatagories() {
+      // This function get all the catagories and returns it as a array
+      $db = new db();
+      $sql = "SELECT * FROM catagories";
+      $input = array();
+
+      return($db->readData($sql, $input));
+    }
+
+    public function getProductsFromCatagories() {
+      // This function gets all products form a catagorie and returns it as a array
     }
   }
 

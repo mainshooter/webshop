@@ -26,7 +26,7 @@ var shoppingcard;
     // Displays the shoppingcard after a update
     var result = shoppingcard.ajax("php/ctrl/shoppingcard.ctrl.php?shoppingcard=display");
     document.getElementById('content').innerHTML = result;
-  }
+  },
   ajax: function(url) {
     // AJAX SYNC GET REQUEST
     var xhttp = new XMLHttpRequest();
