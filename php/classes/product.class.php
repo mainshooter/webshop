@@ -3,7 +3,7 @@
   require_once 'databasehandler.class.php';
   require_once'security.class.php';
 
-  class product extends webshop {
+  class Product extends webshop {
     var $id;
     var $name;
     var $discription;
@@ -24,9 +24,10 @@
       );
       return($db->CreateData($sql, $input));
     }
+    
     public function remove($productID) {
       // Removes product
-      $s = new security();
+      $s = new Security();
       $db = new db();
       $sql = "DELETE FROM `Product` WHERE idProduct=:productID";
       $input = array(
@@ -34,9 +35,10 @@
       );
       return($db->DeleteData());
     }
+
     public function update($updateProductArray) {
       // Update product
-      $s = new security();
+      $s = new Security();
       $db = new db();
       $sql = "UPDATE `Product` SET `Fabrikant_idFabrikant`=:fabrikantID,`naam`=:naam,`prijs`=:prijs,`beschrijving`=:beschrijving,`Categorie_idCategorie`=:catagorieID WHERE idProduct=:productID";
       $input = array(
@@ -49,9 +51,10 @@
       );
       return($db->UpdateData($sql, $input));
     }
+
     public function details($id) {
       // This function gets the detailed page
-      $s = new security();
+      $s = new Security();
       $page = $s->checkInput($id);
 
       $db = new db();
@@ -61,6 +64,7 @@
       );
       return($db->readData($sql, $input));
     }
+
     public function productIDs() {
       // Get all ID's from all products and returns it
       $db = new db();
@@ -73,7 +77,7 @@
     public function display($page) {
       // This function gets all products for a page
       // And returns it
-      $s = new security();
+      $s = new Security();
       $page = $s->checkInput($page);
 
       $db = new db();

@@ -40,10 +40,10 @@
               require 'php/classes/product.class.php';
               require 'php/classes/view.class.php';
 
-              $products = new product();
+              $products = new Product();
               $productArray = $products->display('0');
 
-              $view = new view();
+              $view = new View();
               echo $view->displayProducts($productArray);
             ?>
 

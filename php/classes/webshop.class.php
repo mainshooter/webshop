@@ -1,5 +1,5 @@
 <?php
-  class webshop {
+  class Webshop {
     var $companyName;
 
     function __construct() {
