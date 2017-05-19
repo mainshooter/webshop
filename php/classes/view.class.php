@@ -36,9 +36,28 @@
       }
       return($detail);
     }
-    
-    public function displayShoppingCard($result) {
-      var_dump($result);
+
+    public function displayShoppingCard($result, $amount) {
+      $view = '';
+      foreach ($result as $key) {
+        $view .= '
+        <div class="col-12 product">
+          <h2 class="col-12 left-text">' . $key['naam'] . '</h2>
+          <img class="col-2" src="' . $key['pad'] . $key['filenaam'] . '">
+          <p class="col-3 left-text winkelmandje-height-center">' . $key['prijs'] . '</p>
+          <div>' . $amount . '</div>
+          <select class="col-2 winkelmandje-height-center">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+          <i class="fa fa-trash-o col-3 winkelmandje-height-center" aria-hidden="true" onclick="shoppingcard.remove(' . $key['idProduct'] . ')"></i>
+        </div>
+        ';
+      }
+      return($view);
     }
 
   }

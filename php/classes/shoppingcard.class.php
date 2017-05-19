@@ -10,7 +10,7 @@ require_once 'security.class.php';
     public function add($productID, $amount) {
       // Ads product to shoppingcard
       $s = new Security();
-      $_SESSION['shoppingcard'][$s->checkInput($productID)] = array('amount' => $s->checkInput($amount));
+      $_SESSION['shoppingcard'][$s->checkInput($productID)] = array('amount' => $s->checkInput($amount), 'productID' => $productID);
     }
 
     public function delete($productID) {
@@ -39,7 +39,6 @@ require_once 'security.class.php';
       // If it is return true
       // else false
       $s = new Security();
-      var_dump($_SESSION['shoppingcard']);
       if ($_SESSION['shoppingcard'][$s->checkInput($productID)]['amount'] != 0) {
         return(true);
       }
