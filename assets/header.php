@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <nav>
     <a href="index.php">
         <img class="col-1" src="file/site/logo.png">
@@ -10,4 +11,5 @@
             </ul>
         </div>
         <i class="fa fa-shopping-basket col-1 shopping_card" aria-hidden="true"></i>
+        <span id="shoppingcardCount">0</span>
     </nav>
