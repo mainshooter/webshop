@@ -51,16 +51,8 @@ require_once 'security.class.php';
       // counts all product in the shoppingcard and returns it
       $counts = 0;
       foreach ($_SESSION['shoppingcard'] as $row) {
-        foreach ($row as $key => $value) {
-          if ($row[$key] != 1) {
             // If the id has more than 1 amounts
-            $counts = $counts +  $value;
-          }
-          else {
-            // If the ID has 1 item
-            $counts = $counts + 1;
-          }
-        }
+            $counts = $counts +  $row['amount'];
       }
       return($counts);
     }

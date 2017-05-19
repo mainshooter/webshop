@@ -44,7 +44,7 @@
         <div class="col-12 product">
           <h2 class="col-12 left-text">' . $key['naam'] . '</h2>
           <img class="col-2" src="' . $key['pad'] . $key['filenaam'] . '">
-          <p class="col-3 left-text winkelmandje-height-center">' . $key['prijs'] . '</p>';
+          <p class="col-3 left-text winkelmandje-height-center">&euro;' . $key['prijs'] . '</p>';
           $view .= $this->generateOptionNumbers($key['idProduct'], $amount);
 
           $view .= '<i class="fa fa-trash-o col-3 winkelmandje-height-center" aria-hidden="true" onclick="shoppingcard.remove(' . $key['idProduct'] . ')"></i>
