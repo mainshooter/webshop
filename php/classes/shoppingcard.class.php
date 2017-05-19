@@ -5,21 +5,17 @@ require_once 'security.class.php';
     // Classe met hoofdletter
     // constructor public private or protected
     // Enters tussen method's
-
-
     public function add($productID, $amount) {
       // Ads product to shoppingcard
       $s = new Security();
       $_SESSION['shoppingcard'][$s->checkInput($productID)] = array('amount' => $s->checkInput($amount), 'productID' => $productID);
     }
-
     public function delete($productID) {
       // Delete a shoppingcard product
       $s = new Security();
       // unset($_SESSION['shoppingcard'][$s->checkInput($productID])]);
       unset($_SESSION['shoppingcard'][$s->checkInput($productID)]);
     }
-
     public function update($productID, $amount) {
       $s = new Security();
       $_SESSION['shoppingcard'][$s->checkInput($productID)]['amount'] = $s->checkInput($amount);
@@ -30,7 +26,6 @@ require_once 'security.class.php';
       $s = new Security();
       return($_SESSION['shoppingcard'][$s->checkInput($productID)]['amount']);
     }
-
     public function get() {
       return($_SESSION['shoppingcard']);
     }
@@ -46,18 +41,16 @@ require_once 'security.class.php';
         return(false);
       }
     }
-
     public function count() {
       // counts all product in the shoppingcard and returns it
       $counts = 0;
-      foreach ($_SESSION['shoppingcard'] as $row) {
-            // If the id has more than 1 amounts
-            $counts = $counts +  $row['amount'];
+      if (!empty($_SESSION["shoppingcard"])) {
+        foreach ($_SESSION['shoppingcard'] as $row) {
+              // If the id has more than 1 amounts
+              $counts = $counts +  $row['amount'];
+        }
       }
       return($counts);
     }
-
   }
-
-
 ?>

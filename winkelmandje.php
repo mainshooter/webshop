@@ -15,7 +15,7 @@
   <script src="js/main.js"></script>
 
   </head>
-  <body>
+  <body onload="shoppingcard.count();">
     <div class="wrapper">
       <div class="row">
         <?php require("assets/header.php"); ?>

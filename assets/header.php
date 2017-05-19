@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php
+
+  session_start();
+
+ ?>
 <nav>
     <a href="index.php">
         <img class="col-1" src="file/site/logo.png">
