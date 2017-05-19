@@ -21,7 +21,7 @@
         <?php require("assets/header.php"); ?>
 
           <img class="col-12 image_header" src="http://placehold.it/1080x150"/>
-          <content>
+          <content id="content">
           <?php
 
             require_once 'php/classes/shoppingcard.class.php';
