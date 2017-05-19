@@ -1,7 +1,7 @@
 <?php
-  require 'webshop.class.php';
-  require 'databasehandler.class.php';
-  require 'security.class.php';
+  require_once 'webshop.class.php';
+  require_once 'databasehandler.class.php';
+  require_once'security.class.php';
 
   class product extends webshop {
     var $id;

@@ -1,6 +1,7 @@
 <?php
 
   class security {
+
     public function checkInput($data) {
       // This funcion checks the input
       $data = trim($data);
