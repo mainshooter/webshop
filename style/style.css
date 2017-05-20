@@ -101,6 +101,8 @@ nav ul ul {
   margin: auto 0;
   margin-top: 1em;
   font-size: 2em !important;
+  position: relative;
+  bottom: 1em;
 }
 .categories {
   font-size: 1.3em;
@@ -169,6 +171,10 @@ nav ul ul {
     }
     .title {
         text-align: left;
+    }
+    .shopping_card {
+      position: relative;
+      bottom: 0em;
     }
 
 }
