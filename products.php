@@ -20,9 +20,7 @@
       <div class="row">
         <?php require("assets/header.php"); ?>
 
-          <content>
-            <div class="col-2 categories">
-              <!-- Catagories -->
+            <!-- <div class="col-2 categories">
               <h3>categorieën</h3>
               <ul>
                 <li>AR</li>
@@ -33,14 +31,14 @@
                 <li>HTC</li>
                 <li>Oculus</li>
               </ul>
-            </div>
+            </div> -->
 
             <div class="col-10">
 
               <?php
               // Display product details
-              require 'php/classes/product.class.php';
-              require 'php/classes/view.class.php';
+              require_once 'php/classes/product.class.php';
+              require_once 'php/classes/view.class.php';
 
               $product = new Product();
               if (ISSET($_REQUEST['details'])) {
@@ -54,6 +52,12 @@
                 $productArray = $product->categories();
                 // to get the product catagories only
               }
+              else if (ISSET($_REQUEST['page'])) {
+                $productArray = $product->display($_REQUEST['page']);
+
+                $view = new View();
+                echo $view->displayProducts($productArray);
+              }
               else {
                 $productArray = $product->display('0');
 
@@ -63,7 +67,6 @@
               ?>
             </div>
 
-          </content>
 
         <?php require("assets/footer.php"); ?>
       </div>
