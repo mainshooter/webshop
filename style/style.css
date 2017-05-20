@@ -153,6 +153,11 @@ nav ul ul {
   height: 100%;
   display: block;
 }
+.pagenering {
+  text-align: center;
+  font-size: 1.4em;
+}
+
 .footer {
   font-size: 1.3em;
   background-color: #2c3e50;
