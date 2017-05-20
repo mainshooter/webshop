@@ -72,6 +72,17 @@
       return($selectField);
     }
 
+    public function createPagenering($pages) {
+      // Creates the pagenering
+      $list = '';
+      $list .= '<ul>';
+      for ($i=0; $i < $pages; $i++) {
+        $list .= '<li><a href="products.php?page=' . $i . '">' . $i . '</a></li>';
+      }
+      $list .= '</ul>';
+      return($list);
+    }
+
   }
 
 
