@@ -61,7 +61,6 @@ require_once 'security.class.php';
 
     public function productTotalPriceInShoppingCard($productID) {
       $card = $this->get();
-      var_dump($card);
       $product = new product();
       $productPrice = $product->productPrice($productID);
 

@@ -30,7 +30,7 @@
             <div class="col-9">' . $key['beschrijving'] . '</div>
 
             <p class="col-1">&euro;' . $key['prijs'] . '</p>
-            <i class="fa fa-cart-plus col-5" aria-hidden="true"></i>
+            <i class="fa fa-cart-plus col-5" aria-hidden="true" onclick="shoppingcard.add(' . $key['idProduct'] . ')"></i>
           </div>
         ';
       }

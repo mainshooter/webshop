@@ -52,7 +52,6 @@
           // Get how mutch we have of one product
 
           $productTotal = $shoppingcard->productTotalPriceInShoppingCard($key['productID']);
-          echo "<h1>" . $productTotal . "</h1>";
           // Total cost of one product with multiple items
 
           echo $view->displayShoppingCard($product_details, $amount, $productTotal);
