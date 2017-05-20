@@ -1,10 +1,9 @@
 <?php
-
   if (ISSET($_REQUEST['product'])) {
     // Product controller
-    require '../classes/product.class.php';
-    require '../classes/view.class.php';
-    require '../classes/security.class.php';
+    require_once '../classes/product.class.php';
+    require_once '../classes/view.class.php';
+    require_once '../classes/security.class.php';
     $s = new security();
 
     if ($s->isLogedIn() == false) {
@@ -13,6 +12,7 @@
         // Ctrl for non admin users
         case 'details':
           // Details of a product
+          $product = new Product();
           $productArray = $product->details($_REQUEST['details']);
 
           $view = new View();
@@ -20,10 +20,21 @@
           break;
         case 'page':
           // Display a certent page
+          $product = new Product();
           $productArray = $product->display($_REQUEST['pageNumber']);
 
           $view = new View();
           echo $view->displayProducts($productArray);
+        break;
+        case 'pageNumbers':
+          $product = new Product();
+          $productsTotal = $product->countAllProducts();
+
+          $pages = ceil($productsTotal / 10);
+          echo $pages;
+          $view = new View();
+          echo $view->createPagenering($pages);
+        break;
         default:
             // Displays the first page by default
             $productArray = $product->display('0');
