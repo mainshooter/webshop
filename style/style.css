@@ -18,7 +18,7 @@ body, html {
 }
 
 #nav {
-    text-align: right;
+    text-align: center;
     padding: 0;
 }
 
@@ -150,6 +150,10 @@ nav ul ul {
 }
 @media only screen and (min-width: 768px) {
     /* For desktop: */
+    #nav {
+        text-align: right;
+        padding: 0;
+    }
 
 }
 @media only screen and (min-width: 600px) and (max-width: 767px) {
