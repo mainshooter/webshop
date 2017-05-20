@@ -18,8 +18,8 @@
       <div class="row">
         <?php require_once("assets/header.php"); ?>
 
-          <img class="col-12 image_header" src="http://placehold.it/1080x150"/>
-
+          <img class="col-12 image_header" src="file/site/header.jpg"/>
+          
         <content>
           <div class="col-12">
             <?php
