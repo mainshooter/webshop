@@ -74,6 +74,16 @@
       return($db->readData($sql, $input));
     }
 
+    public function countAllProducts() {
+      // This function counts all products
+      // And returns the number of products we have
+      $db = new db();
+      $sql = "SELECT idProduct FROM Product";
+      $input = array();
+
+      return($db->countRows($sql, $input));
+    }
+
     public function display($page) {
       // This function gets all products for a page
       // And returns it
