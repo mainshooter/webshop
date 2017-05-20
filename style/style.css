@@ -9,6 +9,9 @@ body, html {
     font-family: 'Quicksand', sans-serif;
     text-align: center;
     font-size: 5vh;
+
+    line-height: 70px;
+    /* Centers the title on the height */
 }
 .image_header {
   padding: 0;
@@ -84,6 +87,12 @@ nav ul ul {
     position: absolute;
     left: 100%;
     top: 0;
+}
+#shoppingcardCount {
+  position: relative;
+  top: 19px;
+  font-size: 0.7em;
+  color: black;
 }
 .shopping_card {
   padding: 0;

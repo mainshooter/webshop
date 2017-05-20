@@ -4,9 +4,11 @@
 
  ?>
 <nav>
-    <a href="index.php">
-        <img class="col-1" src="file/site/logo_nt.png">
-    </a>
+    <div class="col-1">
+      <a href="index.php">
+          <img class="col-12" src="file/site/logo_nt.png">
+      </a>
+    </div>
     <div class="col-2 title">Multiversum</div>
         <div id="nav" class="col-8">
             <ul id="width-ul">
@@ -16,7 +18,6 @@
             </ul>
         </div>
         <a href="winkelmandje.php">
-          <i class="fa fa-shopping-basket col-1 shopping_card" aria-hidden="true"></i>
+          <i class="fa fa-shopping-basket col-1 shopping_card" aria-hidden="true"><span id="shoppingcardCount">0</span></i>
         </a>
-        <span id="shoppingcardCount">0</span>
     </nav>
