@@ -132,6 +132,9 @@ nav ul ul {
   width: 6.1em;
   font-size: 0.8em;
 }
+.product_img {
+  height: 12em;
+}
 .product p {
   font-weight: lighter;
   font-size: 1.2em;
@@ -176,9 +179,14 @@ nav ul ul {
       position: relative;
       bottom: 0em;
     }
+    .product_img {
+      height: -1%;
+    }
 
 }
 @media only screen and (min-width: 600px) and (max-width: 767px) {
   /* Tablet */
-
+  .product_img {
+    height: 5em;
+  }
 }

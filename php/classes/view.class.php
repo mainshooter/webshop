@@ -8,7 +8,9 @@
         $products .= '
         <div class="col-3 col-m-4 product">
           <a href="products.php?details=' . $key['idProduct'] . '">
-            <img class="col-12 product_img" src="' . $key['pad'] . $key['filenaam'] . '" />
+            <div class="col-12">
+              <img class="product_img" src="' . $key['pad'] . $key['filenaam'] . '" />
+            </div>
             <h2>' . $key['naam'] . '</h2>
           </a>
           <p>&euro;' . $key['prijs'] . '</p>
