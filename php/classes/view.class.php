@@ -36,6 +36,19 @@
       }
       return($detail);
     }
+    public function displayProductSpecs($result) {
+      $spec = '<table class="col-10 productSpec">';
+      foreach ($result as $key) {
+        $spec .= '
+          <tr>
+            <th>' . $key['Specificatie_naam'] . '</th>
+            <td>' . $key['Specificatie_waarde'] . '</td>
+          </tr>
+        ';
+      }
+      $spec = '</table>';
+      return($spec);
+    }
 
     public function displayShoppingCard($result, $amount, $productTotal) {
       $view = '';
