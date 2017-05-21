@@ -21,17 +21,18 @@
     var $fileContent;
     var $fileExtension;
     var $fileSize;
+    var $filePath;
     // File properties
 
-    function __construct($fileName) {
-      // Constructor set the filename
-      // We only run the constructor if it has a value
-      if (ISSET($fileName)) {
-        if ($fileName > '') {
-          $this->setFileName($fileName);
-        }
-      }
-    }
+    // function __construct() {
+    //   // Constructor set the filename
+    //   // We only run the constructor if it has a value
+    //   if (ISSET($fileName)) {
+    //     if ($fileName > '') {
+    //       $this->setFileName($fileName);
+    //     }
+    //   }
+    // }
     function __destruct() {
       // Clears the class
       $this->clearProperties();
@@ -45,7 +46,7 @@
       // Reads the file
       $fileExists = $this->checkFileExists();
       if ($fileExists) {
-        $this->fileContent = file_get_contents($this->fileName);
+        $this->fileContent = file_get_contents($this->filePath . '/' . $this->fileName);
         return($this->fileContent);
       }
       return("File doesn't exists");
@@ -54,7 +55,7 @@
       // Opens the file
       $fileExists = $this->checkFileExists();
       if ($fileExists) {
-        $fileName = $this->fileName;
+        $filePath = $this->path . '/' . $this->fileName;
         $this->file = fopen($fileName, $mode);
       }
       else {
@@ -97,9 +98,9 @@
 
       return("File is closed");
     }
-    private function checkFileExists() {
+    public function checkFileExists() {
       // Check if the file exists
-      $fileExists = file_exists($this->fileName);
+      $fileExists = file_exists($this->filePath . '/' . $this->fileName);
       if ($fileExists) {
         return (true);
       }
@@ -107,15 +108,7 @@
         return(false);
       }
     }
-    // function writeFile($fileContent) {
-    //   // Write something to a file
-    //   $fileExists = $this->checkFileExists();
-    //   if ($fileExists) {
-    //     $file = $this->file;
-    //     fwrite($file, $fileContent);
-    //   }
-    //   return("Couldn't wirte something");
-    // }
+
     function updateFile($data) {
       // Update a file
       $fileExists = $this->checkFileExists();
@@ -132,6 +125,15 @@
         return("Couldn't wirte something");
       }
     }
+    public function uploadFile() {
+      // Handels it when a file is uploaded
+      move_uploaded_file($_FILES['file_upload']['tmp_name'], $this->filePath . $this->fileName);
+    }
+    public function setPath($path) {
+      // Sets the path wich the file needs to be moves to
+      $this->path = $this->checkInput($path);
+    }
+
     private function checkInput($data) {
       // This funcion checks the input
       $data = trim($data);
