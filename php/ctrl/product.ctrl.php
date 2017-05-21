@@ -20,7 +20,7 @@
 
             $filehandler->fileName = $_FILES['file_upload']['name'];
             $filehandler->filePath = '../../file/uploads/';
-            if ($filehandler->checkFileExists() == true || $filehandler->checkFileExists() == false) {
+            if ($filehandler->checkFileExists() == true) {
               // If the file doen't exists
               $filehandler->uploadFile();
               // Handels the uploaded image
