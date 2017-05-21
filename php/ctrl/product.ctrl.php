@@ -15,6 +15,7 @@
       switch ($_REQUEST['product']) {
         // Ctrl for non admin users
         case 'add':
+            // Adds a product to the webshop ctrl
             $product = new product();
             $filehandler = new filehandler();
 

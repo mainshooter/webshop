@@ -62,18 +62,10 @@
 
                 $view = new View();
                 echo $view->displayProducts($productArray);
-              }
-              else {
-                $productArray = $product->display('0');
 
-                $view = new View();
-                echo $view->displayProducts($productArray);
-              }
-              ?>
-            </div>
+                echo "</div>";
+                echo '<div class="pagenering col-12">';
 
-            <div class="pagenering col-12">
-              <?php
                 require_once 'php/classes/product.class.php';
                 require_once 'php/classes/view.class.php';
                 $product = new Product();
@@ -83,6 +75,28 @@
                 $view = new View();
                 echo $view->createPagenering($pages);
 
+                echo "</div>";
+              }
+              else {
+                $productArray = $product->display('0');
+
+                $view = new View();
+                echo $view->displayProducts($productArray);
+
+                echo "</div>";
+                echo '<div class="pagenering col-12">';
+
+                require_once 'php/classes/product.class.php';
+                require_once 'php/classes/view.class.php';
+                $product = new Product();
+                $productsTotal = $product->countAllProducts();
+
+                $pages = ceil($productsTotal / 10);
+                $view = new View();
+                echo $view->createPagenering($pages);
+
+                echo "</div>";
+              }
               ?>
             </div>
 
