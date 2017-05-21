@@ -10,6 +10,7 @@
       $data = htmlentities($data);
       return ($data);
     }
+    
     private function checkLoginToken() {
       // Checks if the user has the same login token
       // Returns true or false
@@ -25,9 +26,11 @@
         return(false);
       }
     }
+
     public function isLogedIn() {
       return($this->checkLoginToken());
     }
+
   }
 
 
