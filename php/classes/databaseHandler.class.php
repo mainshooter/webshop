@@ -56,8 +56,9 @@
         $query = $conn->prepare($sql);
         $query->execute($input);
 
-        $result = $query->lastInsertId();
-        return($result);
+        $result = $query->rowCount();
+        $lastID = $conn->lastInsertId();
+        return($lastID);
       } catch (Exception $e) {
         return ("Couldn't create data: " . $e->getMessage());
       }
