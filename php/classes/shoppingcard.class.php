@@ -31,7 +31,12 @@ require_once 'security.class.php';
     }
 
     public function get() {
-      return($_SESSION['shoppingcard']);
+      if (ISSET($_SESSION['shoppingcard'])) {
+        return($_SESSION['shoppingcard']);
+      }
+      else {
+        return(0);
+      }
     }
 
     public function checkIfIdExists($productID) {
