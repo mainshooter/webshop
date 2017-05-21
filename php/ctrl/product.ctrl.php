@@ -4,12 +4,54 @@
     require_once '../classes/product.class.php';
     require_once '../classes/view.class.php';
     require_once '../classes/security.class.php';
+    require_once '../classes/filehandler.class.php';
+    require_once '../classes/databasehandler.class.php';
+
+
     $s = new security();
 
     if ($s->isLogedIn() == false) {
       // Not loged in product controller
-      switch ($_GET['product']) {
+      switch ($_REQUEST['product']) {
         // Ctrl for non admin users
+        case 'add':
+            $product = new product();
+            $filehandler = new filehandler();
+
+            $filehandler->fileName = $_FILES['file_upload']['name'];
+            $filehandler->filePath = '../../file/uploads/';
+            if ($filehandler->checkFileExists() == true || $filehandler->checkFileExists() == false) {
+              // If the file doen't exists
+              $filehandler->uploadFile();
+              // Handels the uploaded image
+
+              $newProductArray['fabrikantID'] = NULL;
+              $newProductArray['naam'] = $_REQUEST['productName'];
+              $newProductArray['prijs'] = $_REQUEST['productPrice'];
+              $newProductArray['beschrijving'] = $_REQUEST['discription'];
+              $newProductArray['catagorieID'] = $_REQUEST['catagorie'];
+
+              $createdProductID = $product->add($newProductArray);
+              $db = new db();
+              $sql = "INSERT INTO files (filenaam, pad) VALUES (:filenaam, :pad)";
+              $input = array(
+                "filenaam" => $s->checkInput($_FILES['file_upload']['name']),
+                "pad" => 'file/uploads/'
+              );
+              $fileID = $db->CreateData($sql, $input);
+
+              $sql = "INSERT INTO files_has_Product (files_idfiles, Product_idProduct) VALUES (:fileID, :productID)";
+              $input = array(
+                "fileID" => $fileID,
+                "productID" => $createdProductID
+              );
+              $db->CreateData($sql, $input);
+              echo "Done.";
+            }
+            else {
+              echo "EXITST";
+            }
+          break;
         case 'details':
           // Details of a product
           $product = new Product();

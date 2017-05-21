@@ -45,8 +45,13 @@
                 // Want to display product details
                 $productArray = $product->details($_REQUEST['details']);
 
+
                 $view = new View();
                 echo $view->displayProductDetails($productArray);
+                foreach ($productArray as $row) {
+                  $productArraySpec = $product->productSpec($row['idProduct']);
+                }
+                echo $view->displayProductSpecs($productArraySpec);
               }
               else if (ISSET($_REQUEST['categories'])) {
                 $productArray = $product->categories();

@@ -1,7 +1,7 @@
 <?php
   require_once 'webshop.class.php';
   require_once 'databasehandler.class.php';
-  require_once'security.class.php';
+  require_once 'security.class.php';
 
   class Product extends webshop {
     var $id;
@@ -13,10 +13,11 @@
     public function add($newProductArray) {
       // Add a product to database
       // Parameter is send as a array
+      $s = new Security();
       $db = new db();
-      $sql = "INSERT INTO Product (`Fabrikant_idFabrikant`, `naam`, `prijs`, `beschrijving`, `Categorie_idCategorie`) VALUES (:Fabrikant_idFabrikant, :naam, :prijs, :beschrijving, :Categorie_idCategorie)";
+      $sql = "INSERT INTO Product (`naam`, `prijs`, `beschrijving`, `Categorie_idCategorie`) VALUES (:naam, :prijs, :beschrijving, :Categorie_idCategorie)";
       $input = array(
-        "Fabrikant_idFabrikant" => $s->checkInput($newProductArray['fabrikantID']),
+        // "Fabrikant_idFabrikant" => $s->checkInput($newProductArray['fabrikantID']),
         "naam" => $s->checkInput($newProductArray['naam']),
         "prijs" => $s->checkInput($newProductArray['prijs']),
         "beschrijving" => $s->checkInput($newProductArray['beschrijving']),
@@ -61,6 +62,19 @@
       $sql = "SELECT * FROM `Product` JOIN files_has_Product on files_has_Product.Product_idProduct=`idProduct` JOIN files ON files_has_Product.files_idfiles=files.idfiles WHERE idProduct=:productID";
       $input = array(
         "productID" => $s->checkInput($id)
+      );
+      return($db->readData($sql, $input));
+    }
+    public function productSpec($productID) {
+      // This function get the products specs from a product
+      // It expexts as a parameter a productID
+      // Returns array
+      $db = new db();
+      $s = new Security();
+
+      $sql = "SELECT * FROM Specificatie WHERE Product_idProduct=:productID";
+      $input = array(
+        "productID" => $s->checkInput($productID)
       );
       return($db->readData($sql, $input));
     }
