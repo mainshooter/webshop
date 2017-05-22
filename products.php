@@ -32,8 +32,7 @@
                 <li>Oculus</li>
               </ul>
             </div> -->
-
-            <div class="col-10">
+            <div class="col-12">
 
               <?php
               // Display product details
@@ -99,7 +98,6 @@
               }
               ?>
             </div>
-
 
         <?php require("assets/footer.php"); ?>
       </div>

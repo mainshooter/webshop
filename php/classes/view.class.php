@@ -118,10 +118,9 @@
       $view = '';
       foreach ($result as $key) {
         $view .= '
-        <div class="col-12 product">
-          
-          
-          <div class="col-12 winkelmandje-height-center">
+          <div class="col-12"></div>
+          <div class="col-2">&nbsp;</div>
+          <div class="col-8 product winkelmandje-height-center">
             <img class="col-1" src="' . $key['pad'] . $key['filenaam'] . '">
             <h2 class="col-6 left-text">' . $key['naam'] . '</h2>
             <p class="col-1 left-text">&euro;' . $key['prijs'] . '</p>';
@@ -130,7 +129,8 @@
             $view .= '<i class="fa fa-trash-o col-1" aria-hidden="true" onclick="shoppingcard.remove(' . $key['idProduct'] . ')"></i>
             <p class="col-2">Totaal: &euro;' . $productTotal . '</p>
           </div>
-        </div>
+          <div class="col-2">&nbsp;</div>
+          <div class="col-12"></div>
         ';
       }
       return($view);
