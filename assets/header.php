@@ -19,5 +19,3 @@
           <i class="fa fa-shopping-basket col-1 col-m-1 shopping_card" aria-hidden="true"><span id="shoppingcardCount">0</span></i>
         </a>
     </nav>
-
-    <img class="col-12 image_header" src="file/site/header.jpg"/>
