@@ -5,7 +5,7 @@
     <title>Add a product</title>
   </head>
   <body>
-    <form action="http://localhost/leerjaar2/webshop/php/ctrl/product.ctrl.php" enctype='multipart/form-data' method="post">
+    <form action="/leerjaar2/webshop/php/ctrl/product.ctrl.php" enctype='multipart/form-data' method="post">
       <div>Product naam</div>
       <input type="text" name="productName" />
 

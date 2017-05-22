@@ -42,20 +42,21 @@
 
         $shoppingcardArray = $shoppingcard->get();
         // Gets the shoppingcard array
+        if (!empty($shoppingcardArray)) {
+          foreach ($shoppingcardArray as $key) {
+            // Loops trough every item of the shoppingcard
+            $product_details = $product->details($key['productID']);
+            // Get the details of a product
 
-        foreach ($shoppingcardArray as $key) {
-          // Loops trough every item of the shoppingcard
-          $product_details = $product->details($key['productID']);
-          // Get the details of a product
+            $amount = $shoppingcardArray[$key['productID']]['amount'];
+            // Get how mutch we have of one product
 
-          $amount = $shoppingcardArray[$key['productID']]['amount'];
-          // Get how mutch we have of one product
+            $productTotal = $shoppingcard->productTotalPriceInShoppingCard($key['productID']);
+            // Total cost of one product with multiple items
 
-          $productTotal = $shoppingcard->productTotalPriceInShoppingCard($key['productID']);
-          // Total cost of one product with multiple items
-
-          echo $view->displayShoppingCard($product_details, $amount, $productTotal);
-          }
+            echo $view->displayShoppingCard($product_details, $amount, $productTotal);
+            }  
+        }
           // Display
         $BTWPrice = $shoppingcard->calculateBTW();
         echo "<h2 class='col-12 right-text'>BTW: &euro;" . $BTWPrice . "</h2>";
