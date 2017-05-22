@@ -153,7 +153,8 @@
     function deleteFile() {
       // Delete a file
       $file = $this->fileName;
-      unlink($file);
+      $filePath = $this->filePath;
+      unlink($filePath . $file);
       $this->clearProperties();
       return('delete');
     }
