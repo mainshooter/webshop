@@ -20,7 +20,7 @@
 
 
         <content>
-          <div class="col-12">
+          <div class="col-12 col-m-12">
             <?php
               require 'php/classes/product.class.php';
               require 'php/classes/view.class.php';
@@ -36,7 +36,7 @@
 
         </content>
 
-        <div class="pagenering col-12">
+        <div class="pagenering col-12 col-m-12">
           <?php
             require_once 'php/classes/product.class.php';
             require_once 'php/classes/view.class.php';
