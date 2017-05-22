@@ -41,16 +41,22 @@
       return($detail);
     }
     public function displayProductSpecs($result) {
+      // var_dump($result);
       $spec = '<table class="col-10 productSpec">';
       foreach ($result as $key) {
-        $spec .= '
-          <tr>
-            <th>' . $key['Specificatie_naam'] . '</th>
-            <td>' . $key['Specificatie_waarde'] . '</td>
-          </tr>
-        ';
+        // var_dump($key);
+        var_dump($value);
+        foreach ($key as $row => $value) {
+          $spec .= '
+            <tr>
+              <th>' . $value['Specificatie_naam'] . '</th>
+              <td>' . $value['Specificatie_waarde'] . '</td>
+            </tr>
+          ';
+        }
       }
       $spec = '</table>';
+      echo $spec;
       return($spec);
     }
 
