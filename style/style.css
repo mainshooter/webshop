@@ -9,7 +9,7 @@ body, html {
     font-family: 'Quicksand', sans-serif;
     text-align: center;
     font-size: 5vh;
-
+    color: black;
     line-height: 70px;
     /* Centers the title on the height */
 }
@@ -103,6 +103,7 @@ nav ul ul {
   font-size: 2em !important;
   position: relative;
   bottom: 1em;
+  color: black;
 }
 .categories {
   font-size: 1.3em;
@@ -123,6 +124,10 @@ nav ul ul {
 .product h2 {
   font-weight: bold;
   font-size: 1.6em;
+  color: #16a085;
+}
+.product a {
+  text-decoration: none;
 }
 .product button {
   position: relative;
@@ -142,8 +147,12 @@ nav ul ul {
   margin-top: 0.3em;
 }
 .product_details h2 {
+  color: #16a085;
   font-weight: bold;
   font-size: 1.7em;
+}
+.product_details div {
+  font-size: 1.4em;
 }
 .product_details p {
   font-family: 'Quicksand', sans-serif;
