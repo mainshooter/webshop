@@ -1,4 +1,5 @@
 var shoppingcard;
+var product;
 (function() {
   shoppingcard = {
     add: function(productID) {

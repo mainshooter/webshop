@@ -54,6 +54,10 @@
               echo "EXITST";
             }
           break;
+        case 'delete':
+            $product = new product();
+            $product->delete($_REQUEST['productID']);
+          break;
         case 'details':
           // Details of a product
           $product = new Product();
