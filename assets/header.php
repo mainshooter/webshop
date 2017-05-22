@@ -6,8 +6,8 @@
 <nav>
       <a href="index.php">
           <img class="col-1 col-m-3" src="file/site/logo_nt.png">
+          <div class="col-2 col-m-9 title">Multiversum</div>
       </a>
-    <div class="col-2 col-m-9 title">Multiversum</div>
         <div id="nav" class="col-8 col-m-8">
             <ul id="width-ul">
                 <li><a href="index.php">Home</a></li>
