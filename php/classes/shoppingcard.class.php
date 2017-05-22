@@ -64,7 +64,37 @@ require_once 'security.class.php';
       return($counts);
     }
 
+    private function getProductIDs() {
+      // Get all product id's from the shoppingcard
+      // And returns it
+      $shoppingcard = $this->get();
+
+      $productIDArray;
+      foreach ($shoppingcard as $key) {
+        $productIDArray[] = $key['productID'];
+      }
+      return($productIDArray);
+    }
+
+    public function calculateTotalPriceShoppingcard() {
+      // Calculates the total price of the shoppingcard
+      // Returns totalPrice as a number
+      $productIDArray = $this->getProductIDs();
+      // Get all productIDs from the shoppingcard
+
+      $totalPrice = 0;
+      foreach ($productIDArray as $key => $value) {
+        $totalPrice = $totalPrice + $this->productTotalPriceInShoppingCard($value);
+      }
+
+      return($totalPrice);
+
+
+    }
+
+
     public function productTotalPriceInShoppingCard($productID) {
+      // Gets a total of a product price by
       $card = $this->get();
       $product = new product();
       $productPrice = $product->productPrice($productID);

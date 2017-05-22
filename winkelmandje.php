@@ -48,6 +48,8 @@
                 echo $view->displayShoppingCard($product_details, $amount, $productTotal);
                 // Display
               }
+              $totalPrice = $shoppingcard->calculateTotalPriceShoppingcard();
+              echo "<h2 class='col-12'>" . $totalPrice . "</h2>";
             }
             else {
               echo "<h1 class='col-12'>Uw winkelmandje is leeg</h1>";
