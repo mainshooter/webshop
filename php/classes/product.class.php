@@ -40,7 +40,6 @@
       );
       $result = $db->readData($sql, $input);
 
-      var_dump($result);
       $fileID = '';
       foreach ($result as $key) {
         $fileID = $key['idfiles'];
@@ -70,15 +69,15 @@
 
     public function update($updateProductArray) {
       // Update product
+      // expexts an array with the values
       $s = new Security();
       $db = new db();
-      $sql = "UPDATE `Product` SET `Fabrikant_idFabrikant`=:fabrikantID,`naam`=:naam,`prijs`=:prijs,`beschrijving`=:beschrijving,`Categorie_idCategorie`=:catagorieID WHERE idProduct=:productID";
+      $sql = "UPDATE `Product` SET `naam`=:naam,`prijs`=:prijs,`beschrijving`=:beschrijving, EAN=:EAN WHERE idProduct=:productID";
       $input = array(
-        "fabrikantID" => $s->checkInput($updateProductArray['fabrikantID']),
         "naam" => $s->checkInput($updateProductArray['naam']),
         "prijs" => $s->checkInput($updateProductArray['prijs']),
         "beschrijving" => $s->checkInput($updateProductArray['beschrijving']),
-        "catagorieID" => $s->checkInput($updateProductArray['catagorieID']),
+        "EAN" => $s->checkInput($updateProductArray['EAN']),
         "productID" => $s->checkInput($updateProductArray['productID'])
       );
       return($db->UpdateData($sql, $input));

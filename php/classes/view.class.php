@@ -70,6 +70,44 @@
       return($view);
     }
 
+    public function listOfUpdateableProducts($result) {
+      $view = '';
+      foreach ($result as $key) {
+        $view .= '
+        <div class="col-3 col-m-4 product">
+            <h2>' . $key['naam'] . '</h2>
+          <p>&euro;' . $key['prijs'] . '</p>
+          <a href="?product=updateList&productID=' . $key['idProduct'] . '">UPDATE</a>
+        </div>
+        ';
+      }
+      return($view);
+    }
+    public function updateProductForm($result) {
+      $view = '';
+      foreach ($result as $key) {
+        $view .= '
+        <form method="post">
+          <div>Product naam</div>
+          <input type="text" name="productName" value="' . $key['naam'] . '"/>
+
+          <div>Product Prijs</div>
+          <input type="number" step="0.01" name="productPrice" value="' . $key['prijs'] . '">
+
+          <div>Beschrijving</div>
+          <textarea name="discription">' . $key['beschrijving'] . '</textarea>
+
+          <div>EAN-code</div>
+          <input type="text" name="ean-code" value="' . $key['EAN'] . '"/>
+
+          <div></div>
+          <input type="submit" name="product" value="update">
+        </form>
+        ';
+      }
+      return($view);
+    }
+
     public function displayShoppingCard($result, $amount, $productTotal) {
       $view = '';
       foreach ($result as $key) {

@@ -83,8 +83,21 @@
           $view = new View();
           echo $view->createPagenering($pages);
         break;
+        case 'update':
+            $product = new product();
+            $updateProductArray['naam'] = $_REQUEST['productName'];
+            $updateProductArray['prijs'] = $_REQUEST['productPrice'];
+            $updateProductArray['beschrijving'] = $_REQUEST['discription'];
+            $updateProductArray['EAN'] = $_REQUEST['ean-code'];
+            $updateProductArray['productID'] = $_REQUEST['productID'];
+
+            $product->update($updateProductArray);
+
+            header("Location: updateproduct.php");
+          break;
         default:
             // Displays the first page by default
+            $product = new product();
             $productArray = $product->display('0');
 
             $view = new View();

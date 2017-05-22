@@ -7,6 +7,7 @@
       case 'delete':
         $product = new product();
         $product->delete($_REQUEST['productID']);
+        header("Location: removeproduct.php");
         break;
     }
   }
