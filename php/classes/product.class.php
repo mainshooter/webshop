@@ -105,7 +105,7 @@
       $page = $s->checkInput($page);
 
       $db = new db();
-      $sql = "SELECT * FROM `Product` JOIN files_has_Product on files_has_Product.Product_idProduct=`idProduct` JOIN files ON files_has_Product.files_idfiles=files.idfiles LIMIT :page, 4";
+      $sql = "SELECT * FROM `Product` JOIN files_has_Product on files_has_Product.Product_idProduct=`idProduct` JOIN files ON files_has_Product.files_idfiles=files.idfiles LIMIT :page, 10";
       $input = array(
         "page" => $s->checkInput($page)
       );
