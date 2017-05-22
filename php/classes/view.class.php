@@ -33,7 +33,7 @@
 
             <p class="col-1">&euro;' . $key['prijs'] . '</p>
             <i class="fa fa-cart-plus col-5" aria-hidden="true" onclick="shoppingcard.add(' . $key['idProduct'] . ')"></i>
-            
+
             <p class="col-12">EAN code: ' . $key['EAN'] . '</p>
           </div>
         ';
@@ -52,6 +52,22 @@
       }
       $spec = '</table>';
       return($spec);
+    }
+
+    public function createRemoveAbleProducts($result) {
+      $view = '';
+      foreach ($result as $key) {
+        $view .= '
+        <div class="col-3 col-m-4 product">
+          <a href="products.php?details=' . $key['idProduct'] . '">
+            <h2>' . $key['naam'] . '</h2>
+          </a>
+          <p>&euro;' . $key['prijs'] . '</p>
+          <a href="?product=delete&productID=' . $key['idProduct'] . '">DELETE</a>
+        </div>
+        ';
+      }
+      return($view);
     }
 
     public function displayShoppingCard($result, $amount, $productTotal) {

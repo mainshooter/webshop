@@ -2,6 +2,7 @@
   require_once 'webshop.class.php';
   require_once 'databasehandler.class.php';
   require_once 'security.class.php';
+  require_once 'filehandler.class.php';
 
   class Product extends webshop {
     var $id;
@@ -27,10 +28,36 @@
       return($db->CreateData($sql, $input));
     }
 
-    public function remove($productID) {
+    public function delete($productID) {
       // Removes product
       $s = new Security();
       $db = new db();
+      $filehandler = new filehandler();
+
+      $sql = "SELECT * FROM files JOIN files_has_Product on files.idfiles=files_has_Product.idfiles_has_Product WHERE Product_idProduct=:productID";
+      $input = array(
+        "fileID" => $productID
+      );
+      $result = $db->readData($sql, $input);
+      $fileID = '';
+      foreach ($result as $key) {
+        $fileID = $key['idfile'];
+        $filehandler->fileName = $key['filenaam'];
+        $filehandler->filePath = '../../file/uploads/';
+        $filehandler->deleteFile();
+      }
+      $sql = "DELETE FROM files WHERE idfiles=:fileID";
+      $input = array(
+        "fileID" => $fileID
+      );
+      $db->DeleteData($sql, $input);
+
+      $sql = "DELETE FROM DELETE FROM `files_has_Product` WHERE `Product_idProduct`=:productID";
+      $input = array(
+        "productID" => $s->checkInput($productID)
+      );
+      $db->DeleteData($sql, $input);
+
       $sql = "DELETE FROM `Product` WHERE idProduct=:productID";
       $input = array(
         "productID" => $s->checkInput($productID)
