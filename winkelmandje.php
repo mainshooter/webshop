@@ -51,11 +51,12 @@
             }
 
           ?>
-            <div class="col-10"></div>
-            <button class="col-1" type="button">Betalen</button>
-            <div class="col-1"></div>
-
         </content>
+
+        <div class="col-10"></div>
+        <button class="col-1" type="button">Betalen</button>
+        <div class="col-1"></div>
+        
         <?php require("assets/footer.php"); ?>
       </div>
     </div>
