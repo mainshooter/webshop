@@ -173,6 +173,12 @@ nav ul ul {
   text-align: center;
   font-size: 1.4em;
 }
+.pagenering ul {
+  display: inline-flex;
+}
+.pagenering ul li {
+  margin: 0 0.2em;
+}
 
 .footer {
   font-size: 1.3em;

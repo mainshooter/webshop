@@ -108,7 +108,7 @@
       $db = new db();
       $sql = "SELECT * FROM `Product` JOIN files_has_Product on files_has_Product.Product_idProduct=`idProduct` JOIN files ON files_has_Product.files_idfiles=files.idfiles LIMIT :page, 10";
       $input = array(
-        "page" => $s->checkInput($page)
+        "page" => $s->checkInput(intval($page) * 10)
       );
       // First number is how mutch we want to show
       // Seconds is where we start
