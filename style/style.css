@@ -20,7 +20,9 @@ body, html {
 .left-text {
   text-align: left;
 }
-
+.right-text {
+  text-align: right;
+}
 #nav {
     text-align: center;
     padding: 0;
@@ -123,7 +125,7 @@ nav ul ul {
 .product {
   text-align: center;
 }
-.product h2 {
+h2 {
   font-weight: bold;
   font-size: 1.6em;
   color: #16a085;

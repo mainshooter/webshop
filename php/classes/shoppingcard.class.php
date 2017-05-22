@@ -76,6 +76,16 @@ require_once 'security.class.php';
       return($productIDArray);
     }
 
+    public function calculateBTW() {
+      // Calculates the VAT of the total shoppingcard
+      // Returns it as a nunmber
+      $totalPrice = $this->calculateTotalPriceShoppingcard();
+      $BTWPercentage = 21;
+      $BTWPrice = $totalPrice / 100 * $BTWPercentage;
+      
+      return($BTWPrice);
+    }
+
     public function calculateTotalPriceShoppingcard() {
       // Calculates the total price of the shoppingcard
       // Returns totalPrice as a number
@@ -89,9 +99,7 @@ require_once 'security.class.php';
 
       return($totalPrice);
 
-
     }
-
 
     public function productTotalPriceInShoppingCard($productID) {
       // Gets a total of a product price by

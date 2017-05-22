@@ -57,6 +57,10 @@
           echo $view->displayShoppingCard($product_details, $amount, $productTotal);
           }
           // Display
+        $BTWPrice = $shoppingcard->calculateBTW();
+        echo "<h2 class='col-12 right-text'>BTW: &euro;" . $BTWPrice . "</h2>";
+        $totalPrice = $shoppingcard->calculateTotalPriceShoppingcard();
+        echo "<h2 class='col-12 right-text'>Totaal: &euro;" . $totalPrice . "</h2>";
         break;
     }
   }
