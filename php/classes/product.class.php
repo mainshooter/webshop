@@ -36,14 +36,16 @@
 
       $sql = "SELECT * FROM files JOIN files_has_Product on files.idfiles=files_has_Product.idfiles_has_Product WHERE Product_idProduct=:productID";
       $input = array(
-        "fileID" => $productID
+        "productID" => $productID
       );
       $result = $db->readData($sql, $input);
+
+      var_dump($result);
       $fileID = '';
       foreach ($result as $key) {
-        $fileID = $key['idfile'];
+        $fileID = $key['idfiles'];
         $filehandler->fileName = $key['filenaam'];
-        $filehandler->filePath = '../../file/uploads/';
+        $filehandler->filePath = '../file/uploads/';
         $filehandler->deleteFile();
       }
       $sql = "DELETE FROM files WHERE idfiles=:fileID";
@@ -52,7 +54,7 @@
       );
       $db->DeleteData($sql, $input);
 
-      $sql = "DELETE FROM DELETE FROM `files_has_Product` WHERE `Product_idProduct`=:productID";
+      $sql = "DELETE FROM `files_has_Product` WHERE `Product_idProduct`=:productID";
       $input = array(
         "productID" => $s->checkInput($productID)
       );
@@ -62,7 +64,8 @@
       $input = array(
         "productID" => $s->checkInput($productID)
       );
-      return($db->DeleteData());
+      // echo $db->DeleteData($sql, $input);
+      return($db->DeleteData($sql, $input));
     }
 
     public function update($updateProductArray) {

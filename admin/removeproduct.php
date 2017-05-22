@@ -8,10 +8,6 @@
         $product = new product();
         $product->delete($_REQUEST['productID']);
         break;
-
-      default:
-        # code...
-        break;
     }
   }
 
@@ -28,6 +24,4 @@
 
     echo $view->createRemoveAbleProducts($products);
   }
-  echo "string";
-
 ?>
