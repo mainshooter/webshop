@@ -49,6 +49,9 @@
                 // Display
               }
             }
+            else {
+              echo "<h1 class='col-12'>Uw winkelmandje is leeg</h1>";
+            }
 
           ?>
         </content>
@@ -56,7 +59,7 @@
         <div class="col-10"></div>
         <button class="col-1" type="button">Betalen</button>
         <div class="col-1"></div>
-        
+
         <?php require("assets/footer.php"); ?>
       </div>
     </div>
