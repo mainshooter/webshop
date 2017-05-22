@@ -55,6 +55,7 @@
 
         $query = $conn->prepare($sql);
         $query->execute($input);
+        var_dump($query);
 
         $result = $query->rowCount();
         $lastID = $conn->lastInsertId();

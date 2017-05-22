@@ -15,14 +15,14 @@
       // Parameter is send as a array
       $s = new Security();
       $db = new db();
-      $sql = "INSERT INTO Product (`naam`, `prijs`, `beschrijving`, `Categorie_idCategorie`, 'EAN') VALUES (:naam, :prijs, :beschrijving, :Categorie_idCategorie, :EAN)";
+      $sql = "INSERT INTO `Product`(`naam`, `prijs`, `beschrijving`, `EAN`, `Categorie_idCategorie`) VALUES (:naam, :prijs, :beschrijving, :EAN,:Categorie_idCategorie)";
       $input = array(
         // "Fabrikant_idFabrikant" => $s->checkInput($newProductArray['fabrikantID']),
         "naam" => $s->checkInput($newProductArray['naam']),
         "prijs" => $s->checkInput($newProductArray['prijs']),
         "beschrijving" => $s->checkInput($newProductArray['beschrijving']),
         "Categorie_idCategorie" => $s->checkInput($newProductArray['catagorieID']),
-        "EAN" => $s->checkInput($newProductArray['EAN']);
+        "EAN" => $s->checkInput($newProductArray['EAN'])
       );
       return($db->CreateData($sql, $input));
     }
