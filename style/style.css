@@ -206,4 +206,7 @@ h2 {
   .shopping_card {
     /*width: 0;*/
   }
+  .center {
+    text-align: center;
+  }
 }

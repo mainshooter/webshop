@@ -58,7 +58,7 @@
             }
         }
         else {
-          echo "<h2 class='col-12'>Uw winkelmandje is leeg!</h2>";
+          echo "<h2 class='col-12 center'>Uw winkelmandje is leeg!</h2>";
         }
           // Display
         $BTWPrice = $shoppingcard->calculateBTW();

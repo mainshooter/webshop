@@ -56,7 +56,7 @@
               echo "<h2 class='col-12 right-text'>Totaal: &euro;" . $totalPrice . "</h2>";
             }
             else {
-              echo "<h2 class='col-12'>Uw winkelmandje is leeg!</h2>";
+              echo "<h2 class='col-12 center'>Uw winkelmandje is leeg!</h2>";
             }
 
           ?>

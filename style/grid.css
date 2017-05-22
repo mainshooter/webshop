@@ -119,6 +119,8 @@ html {
     .col-m-10 {width: 83.33%;}
     .col-m-11 {width: 91.66%;}
     .col-m-12 {width: 100%;}
+
+    .center-m
 }
 @media only screen and (min-width: 768px) {
     /* For desktop: */
