@@ -77,13 +77,23 @@ require_once 'security.class.php';
     }
 
     public function calculateBTW() {
-      // Calculates the VAT of the total shoppingcard
-      // Returns it as a nunmber
+      // Calculates the BTW of the total shoppingcard
+      // Returns it as a number
       $totalPrice = $this->calculateTotalPriceShoppingcard();
       $BTWPercentage = 21;
       $BTWPrice = $totalPrice / 100 * $BTWPercentage;
       
       return($BTWPrice);
+    }
+
+    public function calculatePriceWithoutBTW() {
+      // Calculates the price without BTW
+      // Returns it as a number
+      $totalPrice = $this->calculateTotalPriceShoppingcard();
+      $totalBTWPrice = $this->calculateBTW();
+      $priceWithoutBTW = $totalPrice - $totalBTWPrice;
+
+      return($priceWithoutBTW);
     }
 
     public function calculateTotalPriceShoppingcard() {
