@@ -113,14 +113,16 @@
       foreach ($result as $key) {
         $view .= '
         <div class="col-12 product">
-          <h2 class="col-12 left-text">' . $key['naam'] . '</h2>
-          <img class="col-2" src="' . $key['pad'] . $key['filenaam'] . '">
-          <div class="col-10 winkelmandje-height-center">
-            <p class="col-3 left-text">&euro;' . $key['prijs'] . '</p>';
+          
+          
+          <div class="col-12 winkelmandje-height-center">
+            <img class="col-1" src="' . $key['pad'] . $key['filenaam'] . '">
+            <h2 class="col-6 left-text">' . $key['naam'] . '</h2>
+            <p class="col-1 left-text">&euro;' . $key['prijs'] . '</p>';
             $view .= $this->generateOptionNumbers($key['idProduct'], $amount);
 
-            $view .= '<i class="fa fa-trash-o col-2" aria-hidden="true" onclick="shoppingcard.remove(' . $key['idProduct'] . ')"></i>
-            <p class="col-4">Totaal: &euro;' . $productTotal . '</p>
+            $view .= '<i class="fa fa-trash-o col-1" aria-hidden="true" onclick="shoppingcard.remove(' . $key['idProduct'] . ')"></i>
+            <p class="col-2">Totaal: &euro;' . $productTotal . '</p>
           </div>
         </div>
         ';
@@ -132,7 +134,7 @@
       // Generates a select input field.
       // When the option is the same to the number we got for the option input
       // We set that as selected
-      $selectField = '<select onchange="shoppingcard.update(\'' . $productID . '\', this.value);" class="col-3">';
+      $selectField = '<select onchange="shoppingcard.update(\'' . $productID . '\', this.value);" class="col-1">';
       for ($i=0; $i < 10; $i++) {
         if ($amount == $i) {
           $selectField .= '<option value="' . $i .'" selected>' . $i . '</option>';
