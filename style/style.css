@@ -140,7 +140,7 @@ nav ul ul {
   font-size: 0.8em;
 }
 .product_img {
-  height: 12em;
+  height: 100%;
 }
 .product p {
   font-weight: lighter;
@@ -191,16 +191,10 @@ nav ul ul {
       bottom: 0em;
       width: 0;
     }
-    .product_img {
-      height: -1%;
-    }
 
 }
 @media only screen and (min-width: 600px) and (max-width: 767px) {
   /* Tablet */
-  .product_img {
-    height: 5em;
-  }
   .shopping_card {
     /*width: 0;*/
   }
