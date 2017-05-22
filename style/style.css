@@ -105,6 +105,7 @@ nav ul ul {
   position: relative;
   bottom: 1em;
   color: black;
+  width: 100%;
 }
 .categories {
   font-size: 1.3em;
@@ -188,6 +189,7 @@ nav ul ul {
     .shopping_card {
       position: relative;
       bottom: 0em;
+      width: 0;
     }
     .product_img {
       height: -1%;
@@ -198,5 +200,8 @@ nav ul ul {
   /* Tablet */
   .product_img {
     height: 5em;
+  }
+  .shopping_card {
+    /*width: 0;*/
   }
 }
