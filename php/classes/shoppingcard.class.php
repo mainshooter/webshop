@@ -70,10 +70,12 @@ require_once 'security.class.php';
       $shoppingcard = $this->get();
 
       $productIDArray;
-      foreach ($shoppingcard as $key) {
-        $productIDArray[] = $key['productID'];
+      if (!empty($shoppingcard)) {
+        foreach ($shoppingcard as $key) {
+          $productIDArray[] = $key['productID'];
+        }
+        return($productIDArray);
       }
-      return($productIDArray);
     }
 
     public function calculateBTW() {
@@ -82,7 +84,7 @@ require_once 'security.class.php';
       $totalPrice = $this->calculateTotalPriceShoppingcard();
       $BTWPercentage = 21;
       $BTWPrice = $totalPrice / 100 * $BTWPercentage;
-      
+
       return($BTWPrice);
     }
 
@@ -103,10 +105,11 @@ require_once 'security.class.php';
       // Get all productIDs from the shoppingcard
 
       $totalPrice = 0;
-      foreach ($productIDArray as $key => $value) {
-        $totalPrice = $totalPrice + $this->productTotalPriceInShoppingCard($value);
+      if (!empty($productIDArray)) {
+        foreach ($productIDArray as $key => $value) {
+          $totalPrice = $totalPrice + $this->productTotalPriceInShoppingCard($value);
+        }
       }
-
       return($totalPrice);
 
     }

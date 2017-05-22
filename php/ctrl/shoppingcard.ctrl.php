@@ -55,7 +55,10 @@
             // Total cost of one product with multiple items
 
             echo $view->displayShoppingCard($product_details, $amount, $productTotal);
-            }  
+            }
+        }
+        else {
+          echo "<h2 class='col-12'>Uw winkelmandje is leeg!</h2>";
         }
           // Display
         $BTWPrice = $shoppingcard->calculateBTW();
