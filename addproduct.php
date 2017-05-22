@@ -23,6 +23,9 @@
         <option value="1">VR</option>
       </select>
 
+      <div>EAN-code</div>
+      <input type="text" name="ean-code" />
+
       <div></div>
       <input type="submit" name="product" value="add">
     </form>

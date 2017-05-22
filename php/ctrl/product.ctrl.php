@@ -31,6 +31,7 @@
               $newProductArray['prijs'] = $_REQUEST['productPrice'];
               $newProductArray['beschrijving'] = $_REQUEST['discription'];
               $newProductArray['catagorieID'] = $_REQUEST['catagorie'];
+              $newProductArray['EAN'] = $_REQUEST['ean-code'];
 
               $createdProductID = $product->add($newProductArray);
               $db = new db();
