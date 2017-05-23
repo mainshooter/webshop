@@ -1,5 +1,4 @@
 <?php
-
   class View {
     public function displayProducts($result) {
       // This function creates the view for all products and returns it
@@ -20,7 +19,6 @@
       }
       return($products);
     }
-
     public function displayProductDetails($result) {
       // DIsplay product details
       $detail = '';
@@ -30,10 +28,8 @@
             <h2 class="col-12">' . $key['naam'] . '</h2>
             <img class="col-3" src="' . $key['pad'] . $key['filenaam'] . '" />
             <div class="col-9">' . $key['beschrijving'] . '</div>
-
             <p class="col-1">&euro;' . $key['prijs'] . '</p>
             <i class="fa fa-cart-plus col-5" aria-hidden="true" onclick="shoppingcard.add(' . $key['idProduct'] . ')"></i>
-
             <p class="col-12">EAN code: ' . $key['EAN'] . '</p>
           </div>
         ';
@@ -41,25 +37,18 @@
       return($detail);
     }
     public function displayProductSpecs($result) {
-      // var_dump($result);
+      // No foreach needed
+      // It is done in the previouse method
       $spec = '<table class="col-10 productSpec">';
-      foreach ($result as $key) {
-        // var_dump($key);
-        var_dump($value);
-        foreach ($key as $row => $value) {
           $spec .= '
             <tr>
-              <th>' . $value['Specificatie_naam'] . '</th>
-              <td>' . $value['Specificatie_waarde'] . '</td>
+              <th>' . $result['Specificatie_naam'] . '</th>
+              <td>' . $result['Specificatie_waarde'] . '</td>
             </tr>
           ';
-        }
-      }
-      $spec = '</table>';
-      echo $spec;
+      $spec .= '</table>';
       return($spec);
     }
-
     public function createRemoveAbleProducts($result) {
       $view = '';
       foreach ($result as $key) {
@@ -75,7 +64,6 @@
       }
       return($view);
     }
-
     public function listOfUpdateableProducts($result) {
       $view = '';
       foreach ($result as $key) {
@@ -96,16 +84,12 @@
         <form method="post">
           <div>Product naam</div>
           <input type="text" name="productName" value="' . $key['naam'] . '"/>
-
           <div>Product Prijs</div>
           <input type="number" step="0.01" name="productPrice" value="' . $key['prijs'] . '">
-
           <div>Beschrijving</div>
           <textarea name="discription">' . $key['beschrijving'] . '</textarea>
-
           <div>EAN-code</div>
           <input type="text" name="ean-code" value="' . $key['EAN'] . '"/>
-
           <div></div>
           <input type="submit" name="product" value="update">
         </form>
@@ -113,7 +97,6 @@
       }
       return($view);
     }
-
     public function displayShoppingCard($result, $amount, $productTotal) {
       $view = '';
       foreach ($result as $key) {
@@ -125,7 +108,6 @@
             <h2 class="col-6 left-text">' . $key['naam'] . '</h2>
             <p class="col-1 left-text">&euro;' . $key['prijs'] . '</p>';
             $view .= $this->generateOptionNumbers($key['idProduct'], $amount);
-
             $view .= '<i class="fa fa-trash-o col-1" aria-hidden="true" onclick="shoppingcard.remove(' . $key['idProduct'] . ')"></i>
             <p class="col-2">Totaal: &euro;' . $productTotal . '</p>
           </div>
@@ -135,7 +117,6 @@
       }
       return($view);
     }
-
     public function generateOptionNumbers($productID, $amount) {
       // Generates a select input field.
       // When the option is the same to the number we got for the option input
@@ -152,7 +133,6 @@
       $selectField .= '</select>';
       return($selectField);
     }
-
     public function createPagenering($pages) {
       // Creates the pagenering
       $list = '';
@@ -163,8 +143,5 @@
       $list .= '</ul>';
       return($list);
     }
-
   }
-
-
 ?>
