@@ -1,5 +1,6 @@
 <?php
-
+require_once 'databasehandler.class.php';
+require_once 'security.class.php';
   // File open modes
     // R read-only
     // W write and read
@@ -132,6 +133,18 @@
     public function setPath($path) {
       // Sets the path wich the file needs to be moves to
       $this->path = $this->checkInput($path);
+    }
+
+    public function saveFileLocation($filename, $path) {
+      $db = new db();
+      $s = new Security();
+
+      $sql = "INSERT INTO files (filenaam, pad) VALUES (:filenaam, :pad)";
+      $input = array(
+        "filenaam" => $s->checkInput($filename),
+        "pad" => $s->checkInput($path)
+      );
+      return($db->createData($sql, $input));
     }
 
     private function checkInput($data) {

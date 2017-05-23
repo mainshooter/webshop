@@ -129,6 +129,13 @@ h2 {
   font-weight: bold;
   font-size: 1.6em;
   color: #16a085;
+  padding: 0 !important;
+}
+input {
+  padding: 0.7em !important;
+}
+textarea {
+  height: 24em;
 }
 .product a {
   text-decoration: none;

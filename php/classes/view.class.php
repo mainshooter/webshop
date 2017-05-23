@@ -49,8 +49,30 @@
       $spec .= '</table>';
       return($spec);
     }
+
+    public function displayProductTable($row) {
+      // Create a table for a spesific row
+      $table = '';
+      foreach ($row as $key) {
+        $table = '
+          <tr>
+            <td class="col-3"><img class="col-4" src="/leerjaar2/webshop/' . $key['pad'] . $key['filenaam'] .  '"></td>
+            <td class="col-3">' . $key['naam'] . '</td>
+            <td class="col-3">' . $key['prijs'] . '</td>
+            <td class="col-3">' . $key['EAN'] . '</td>
+            <td class="col-3">
+              <a href="?product=updateForm&productID=' . $key['idProduct'] . '"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+              <a href="?product=delete&productID=' . $key['idProduct'] . '"><i class="fa fa-trash-o" aria-hidden="true"></i>
+            </td>
+          </tr>
+        ';
+      }
+      return($table);
+    }
+
+
     public function createRemoveAbleProducts($result) {
-      $view = '';
+      $view = '<table>';
       foreach ($result as $key) {
         $view .= '
         <div class="col-3 col-m-4 product">
@@ -62,6 +84,7 @@
         </div>
         ';
       }
+      $view .= '<\table>';
       return($view);
     }
     public function listOfUpdateableProducts($result) {
@@ -81,18 +104,20 @@
       $view = '';
       foreach ($result as $key) {
         $view .= '
-        <form method="post">
-          <div>Product naam</div>
-          <input type="text" name="productName" value="' . $key['naam'] . '"/>
-          <div>Product Prijs</div>
-          <input type="number" step="0.01" name="productPrice" value="' . $key['prijs'] . '">
-          <div>Beschrijving</div>
-          <textarea name="discription">' . $key['beschrijving'] . '</textarea>
-          <div>EAN-code</div>
-          <input type="text" name="ean-code" value="' . $key['EAN'] . '"/>
+        <div class="col-3"></div>
+        <form method="post" class="col-6">
+          <h2 class="col-12">Product naam</h2>
+          <input class="col-4" type="text" name="productName" value="' . $key['naam'] . '"/>
+          <h2 class="col-12">Product Prijs</h2>
+          <input class="col-4" type="number" step="0.01" name="productPrice" value="' . $key['prijs'] . '">
+          <h2 class="col-12">Beschrijving</h2>
+          <textarea class="col-8" name="discription">' . $key['beschrijving'] . '</textarea>
+          <h2 class="col-12">EAN-code</h2>
+          <input class="col-4" type="text" name="ean-code" value="' . $key['EAN'] . '"/>
           <div></div>
-          <input type="submit" name="product" value="update">
+          <input class="col-2" type="submit" name="product" value="update">
         </form>
+        <div class="col-3"></div>
         ';
       }
       return($view);
@@ -107,7 +132,7 @@
             <h2 class="col-5 left-text">' . $key['naam'] . '</h2>
             <p class="col-1 left-text">&euro;' . $key['prijs'] . '</p>';
             $view .= $this->generateOptionNumbers($key['idProduct'], $amount);
-            $view .= '<i class="fa fa-trash-o col-1" aria-hidden="true" onclick="shoppingcard.remove(' . $key['idProduct'] . ')"></i>
+            $view .= '<i class="fa fa-trash-o col-1" aria-hidden="true" style="margin-top: 0.5em;" onclick="shoppingcard.remove(' . $key['idProduct'] . ')"></i>
             <p class="col-2">Totaal: &euro;' . $productTotal . '</p>
           </div>
           <div class="col-2">&nbsp;</div>
@@ -141,6 +166,38 @@
       }
       $list .= '</ul>';
       return($list);
+    }
+
+    public function createForm() {
+      // This function creates the create from
+      // To create a new product
+      $form = '
+        <form enctype="multipart/form-data" method="post">
+          <div>Product naam</div>
+          <input type="text" name="productName" />
+
+          <div>Product Prijs</div>
+          <input type="number" step="0.01" name="productPrice">
+
+          <div>Beschrijving</div>
+          <textarea name="discription"></textarea>
+
+          <div>Product Image</div>
+          <input type="file" name="file_upload"/>
+
+          <div>Product catagorie</div>
+          <select name="catagorie">
+            <option value="1">VR</option>
+          </select>
+
+          <div>EAN-code</div>
+          <input type="text" name="ean-code" />
+
+          <div></div>
+          <input type="submit" name="product" value="add">
+        </form>
+      ';
+      return($form);
     }
   }
 ?>
