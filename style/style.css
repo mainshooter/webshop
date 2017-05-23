@@ -174,9 +174,12 @@ textarea {
   font-size: 1.4em;
 }
 .winkelmandje-height-center {
-  margin: 2.5em 0;
   height: 100%;
   display: block;
+}
+.paybutton {
+  background-color: #16a085;
+  margin-bottom: 1em;
 }
 .pagenering {
   text-align: center;
@@ -192,6 +195,9 @@ textarea {
 .footer {
   font-size: 1.3em;
   background-color: #2c3e50;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 @media only screen and (min-width: 768px) {
     /* For desktop: */

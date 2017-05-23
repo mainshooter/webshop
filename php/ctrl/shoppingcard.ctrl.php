@@ -62,11 +62,11 @@
         }
           // Display
         $BTWPrice = $shoppingcard->calculateBTW();
-        echo "<h2 class='col-12 right-text'>BTW: &euro;" . $BTWPrice . "</h2>";
+        echo "<h2 class='col-10 right-text'>BTW: &euro;" . $BTWPrice . "</h2>";
         $priceWithoutBTW = $shoppingcard->calculatePriceWithoutBTW();
-        echo "<h2 class='col-12 right-text'>Exclusief BTW: &euro;" . $priceWithoutBTW . "</h2>";
+        echo "<h2 class='col-10 right-text'>Exclusief BTW: &euro;" . $priceWithoutBTW . "</h2>";
         $totalPrice = $shoppingcard->calculateTotalPriceShoppingcard();
-        echo "<h2 class='col-12 right-text'>Totaal: &euro;" . $totalPrice . "</h2>";
+        echo "<h2 class='col-10 right-text'>Totaal: &euro;" . $totalPrice . "</h2>";
         break;
     }
   }
