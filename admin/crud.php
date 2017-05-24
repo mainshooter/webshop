@@ -37,13 +37,7 @@
           $newProductArray['EAN'] = $_REQUEST['ean-code'];
 
           $productID = $product->add($newProductArray);
-          $db = new db();
-          $sql = "INSERT INTO files_has_Product (files_idfiles, Product_idProduct) VALUES (:fileID, :productID)";
-          $input = array(
-            "fileID" => $fileID,
-            "productID" => $productID
-          );
-          $db->CreateData($sql, $input);
+          $product->linkProductToFile($productID, $fileID);
           echo "Done.";
           header("Location: crud.php");
         }
@@ -55,6 +49,19 @@
         $product = new product();
         $product->delete($_REQUEST['productID']);
         header("Location: crud.php");
+        break;
+      case 'deleteImage':
+        // Deletes a image from the database and from the upload folder
+        $filehandler->deleteFileDatabase($_REQUEST['fileID']);
+        $db = new db();
+        $s = new Securty();
+
+        $sql = "DELETE FROM files_has_Product WHERE idfiles_has_Product=:fileID";
+        $input = array(
+          "fileID" => $_REQUEST['fileID']
+        );
+        $db->DeleteData($sql, $input);
+
         break;
       case 'updateForm':
         $product_details = $product->details($_REQUEST['productID']);
@@ -70,6 +77,37 @@
         $updateProductArray['productID'] = $_REQUEST['productID'];
 
         $product->update($updateProductArray);
+
+        if (ISSET($_FILES['file_upload']['name'])) {
+          // If there if a file upload
+          // We check if the db has a file for that product
+          // And removes it if it has one
+          // And Insert the new one
+          $product_has_file = $product->checkForProductPhoto($_REQUEST['productID']);
+          if ($product_has_file >= 1) {
+            // There is a file, we need to delete it and insert the new one
+            $pictureID = $product->getProductPictureID($_REQUEST['productID']);
+            $fileName = $product->getProductPictureFileName($pictureID);
+
+            $filehandler->filePath = "../file/uploads/";
+            $filehandler->deleteFileDatabase($pictureID);
+
+            $filehandler->fileName = $_FILES['file_upload']['name'];
+            $filehandler->filePath = '../file/uploads/';
+            $filehandler->uploadFile();
+            // Uploads the file
+
+            $filehandler->filePath = "../file/uploads/";
+            $fileID = $filehandler->saveFileLocation($_FILES['file_upload']['name'], 'file/uploads/');
+            $product->linkProductToFile($_REQUEST['productID'], $fileID);
+            // Saves everything in the database
+          }
+          else {
+            // Well only to upload a new image
+
+          }
+        }
+
         header("Location: crud.php");
         break;
 

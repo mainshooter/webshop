@@ -161,6 +161,67 @@
       }
     }
 
+    public function checkForProductPhoto($productID) {
+      // This function checks if the db contains a picture for a product
+      // Returns 1 or higer if a product has a picture
+      // Returns 0 when it didn't found anything
+      $db = new db();
+      $s = new Security();
+
+      $sql = "SELECT * FROM files_has_Product WHERE Product_idProduct=:productID";
+      $input = array(
+        "productID" => $s->checkInput($productID)
+      );
+      $rowCount = $db->countRows($sql, $input);
+      return($rowCount);
+    }
+
+    public function getProductPictureID($productID) {
+      // This function get the id for the picture file
+      // Returns the fileID as string or number
+      $s = new Security();
+      $db = new db();
+
+      $sql = "SELECT files_idfiles FROM files_has_Product WHERE Product_idProduct=:productID";
+      $input = array(
+        "productID" => $s->checkInput($productID)
+      );
+      $fileID = $db->readData($sql, $input);
+
+      foreach ($fileID as $key) {
+        return($key['files_idfiles']);
+      }
+    }
+
+    public function getProductPictureFileName($fileID) {
+      // Gets the picture file name
+      // And returns it as a string
+      $db = new db();
+      $s = new Security();
+
+      $sql = "SELECT filenaam FROM files WHERE idfiles=:fileID";
+      $input = array(
+        "fileID" => $s->checkInput($fileID)
+      );
+      $fileNameArray = $db->readData($sql, $input);
+      foreach ($fileNameArray as $key) {
+        return($key['filenaam']);
+      }
+    }
+
+    public function linkProductToFile($productID, $fileID) {
+      // This function links a product to a file
+      $db = new db();
+      $s = new Security();
+
+      $sql = "INSERT INTO files_has_Product (files_idfiles, Product_idProduct) VALUES (:fileID, :productID)";
+      $input = array(
+        "fileID" => $s->checkInput($fileID),
+        "productID" => $s->checkInput($productID)
+      );
+      $db->CreateData($sql, $input);
+    }
+
     public function getCatagories() {
       // This function get all the catagories and returns it as a array
       $db = new db();

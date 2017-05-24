@@ -104,7 +104,7 @@
         $query->execute($input);
 
         $result = $query->rowCount();
-        return("Succesfully");
+        return(1);
       } catch (Exception $e) {
         return ("Couldn't delete data: " . $e->getMessage());
       }

@@ -128,7 +128,13 @@ require_once 'security.class.php';
     }
     public function uploadFile() {
       // Handels it when a file is uploaded
-      move_uploaded_file($_FILES['file_upload']['tmp_name'], $this->filePath . $this->fileName);
+      // Returns true when the file is uploaded without problem
+      if (move_uploaded_file($_FILES['file_upload']['tmp_name'], $this->filePath . $this->fileName)) {
+        return(true);
+      }
+      else {
+        return(false);
+      }
     }
     public function setPath($path) {
       // Sets the path wich the file needs to be moves to
@@ -147,6 +153,35 @@ require_once 'security.class.php';
       return($db->createData($sql, $input));
     }
 
+    public function deleteFileDatabase($fileID) {
+      // Deletes the file location from the database
+      // Expects a string of number as fileID
+      $db = new db();
+      $s = new Security();
+
+      $sql = "SELECT filenaam FROM files WHERE idfiles=:fileID";
+      $input = array(
+        "fileID" => $s->checkInput($fileID)
+      );
+      $filenaam = $db->readData($sql, $input);
+
+      $sql = "DELETE FROM files WHERE idfiles=:fileID";
+      $input = array(
+        "fileID" => $s->checkInput($fileID)
+      );
+      $db->DeleteData($sql, $input);
+
+      $sql = "DELETE FROM files_has_Product WHERE files_idfiles=:fileID";
+      $input = array(
+        "fileID" => $s->checkInput($fileID)
+      );
+      $db->DeleteData($sql, $input);
+
+      foreach ($filenaam as $key) {
+        $this->deleteFile($key['filenaam']);
+      }
+    }
+
     private function checkInput($data) {
       // This funcion checks the input
       $data = trim($data);
@@ -163,11 +198,9 @@ require_once 'security.class.php';
       $this->fileExtension = "";
       $this->fileSize = "";
     }
-    function deleteFile() {
+    private function deleteFile($file) {
       // Delete a file
-      $file = $this->fileName;
-      $filePath = $this->filePath;
-      unlink($filePath . $file);
+      unlink($this->filePath . $file);
       $this->clearProperties();
       return('delete');
     }
