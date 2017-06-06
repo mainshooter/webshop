@@ -106,8 +106,8 @@
         $view .= '
         <div class="col-3"></div>
         <form method="post" enctype="multipart/form-data" class="col-6">
-          <img class="col-3" src="/leerjaar2/webshop/' . $key['pad'] . $key['filenaam'] .  '">
-          <h2 class="col-3">Nieuwe foto</h2>
+          <img class="col-3" src="' . $key['pad'] . $key['filenaam'] .  '">
+          <h2 class="col-12">Nieuwe foto</h2>
           <input class="col-3" type="file" name="file_upload"/>
           <div class="col-6"><a href="?product=deleteImage&fileID=' . $key['idfiles'] . '">Delete image</a></div>
           <h2 class="col-12">Product naam</h2>
